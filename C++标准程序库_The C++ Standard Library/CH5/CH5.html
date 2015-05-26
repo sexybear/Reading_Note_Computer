@@ -1,0 +1,226 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+   <meta http-equiv="content-type" content="text/html;charset=UTF-8">
+   <style type="text/css">
+   /*CSS stylesheet is based on killwing's flavored markdown style:https://gist.github.com/2937864*/body{    margin: 0 auto;    font: 13px/1.231 Helvetica, Arial, sans-serif;    color: #444444;    line-height: 1;    max-width: 960px;    padding: 5px;}h1, h2, h3, h4 {    color: #111111;    font-weight: 400;}h1, h2, h3, h4, h5, p {    margin-bottom: 16px;    padding: 0;}h1 {    font-size: 28px;}h2 {    font-size: 22px;    margin: 20px 0 6px;}h3 {    font-size: 21px;}h4 {    font-size: 18px;}h5 {    font-size: 16px;}a {    color: #0099ff;    margin: 0;    padding: 0;    vertical-align: baseline;}a:link,a:visited{ text-decoration:none;}a:hover{ text-decoration:underline;}ul, ol {    padding: 0;    margin: 0;}li {    line-height: 24px;    margin-left: 44px;}li ul, li ul {    margin-left: 24px;}ul, ol {    font-size: 14px;    line-height: 20px;    max-width: 540px;}p {    font-size: 14px;    line-height: 20px;    max-width: 540px;    margin-top: 3px;}pre {    padding: 0px 4px;    max-width: 800px;    white-space: pre-wrap;    font-family: Consolas, Monaco, Andale Mono, monospace;    line-height: 1.5;    font-size: 13px;    border: 1px solid #ddd;    background-color: #f7f7f7;    border-radius: 3px;}code {    font-family: Consolas, Monaco, Andale Mono, monospace;    line-height: 1.5;    font-size: 13px;    border: 1px solid #ddd;    background-color: #f7f7f7;    border-radius: 3px;}pre code {    border: 0px;}aside {    display: block;    float: right;    width: 390px;}blockquote {    border-left:.5em solid #40AA53;    padding: 0 2em;    margin-left:0;    max-width: 476px;}blockquote  cite {    font-size:14px;    line-height:20px;    color:#bfbfbf;}blockquote cite:before {    content: '\2014 \00A0';}blockquote p {      color: #666;    max-width: 460px;}hr {    height: 1px;    border: none;    border-top: 1px dashed #0066CC}button,input,select,textarea {  font-size: 100%;  margin: 0;  vertical-align: baseline;  *vertical-align: middle;}button, input {  line-height: normal;  *overflow: visible;}button::-moz-focus-inner, input::-moz-focus-inner {  border: 0;  padding: 0;}button,input[type="button"],input[type="reset"],input[type="submit"] {  cursor: pointer;  -webkit-appearance: button;}input[type=checkbox], input[type=radio] {  cursor: pointer;}/* override default chrome & firefox settings */input:not([type="image"]), textarea {  -webkit-box-sizing: content-box;  -moz-box-sizing: content-box;  box-sizing: content-box;}input[type="search"] {  -webkit-appearance: textfield;  -webkit-box-sizing: content-box;  -moz-box-sizing: content-box;  box-sizing: content-box;}input[type="search"]::-webkit-search-decoration {  -webkit-appearance: none;}label,input,select,textarea {  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;  font-size: 13px;  font-weight: normal;  line-height: normal;  margin-bottom: 18px;}input[type=checkbox], input[type=radio] {  cursor: pointer;  margin-bottom: 0;}input[type=text],input[type=password],textarea,select {  display: inline-block;  width: 210px;  padding: 4px;  font-size: 13px;  font-weight: normal;  line-height: 18px;  height: 18px;  color: #808080;  border: 1px solid #ccc;  -webkit-border-radius: 3px;  -moz-border-radius: 3px;  border-radius: 3px;}select, input[type=file] {  height: 27px;  line-height: 27px;}textarea {  height: auto;}/* grey out placeholders */:-moz-placeholder {  color: #bfbfbf;}::-webkit-input-placeholder {  color: #bfbfbf;}input[type=text],input[type=password],select,textarea {  -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;  -moz-transition: border linear 0.2s, box-shadow linear 0.2s;  transition: border linear 0.2s, box-shadow linear 0.2s;  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);}input[type=text]:focus, input[type=password]:focus, textarea:focus {  outline: none;  border-color: rgba(82, 168, 236, 0.8);  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);}/* buttons */button {  display: inline-block;  padding: 4px 14px;  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;  font-size: 13px;  line-height: 18px;  -webkit-border-radius: 4px;  -moz-border-radius: 4px;  border-radius: 4px;  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);  background-color: #0064cd;  background-repeat: repeat-x;  background-image: -khtml-gradient(linear, left top, left bottom, from(#049cdb), to(#0064cd));  background-image: -moz-linear-gradient(top, #049cdb, #0064cd);  background-image: -ms-linear-gradient(top, #049cdb, #0064cd);  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #049cdb), color-stop(100%, #0064cd));  background-image: -webkit-linear-gradient(top, #049cdb, #0064cd);  background-image: -o-linear-gradient(top, #049cdb, #0064cd);  background-image: linear-gradient(top, #049cdb, #0064cd);  color: #fff;  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);  border: 1px solid #004b9a;  border-bottom-color: #003f81;  -webkit-transition: 0.1s linear all;  -moz-transition: 0.1s linear all;  transition: 0.1s linear all;  border-color: #0064cd #0064cd #003f81;  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);}button:hover {  color: #fff;  background-position: 0 -15px;  text-decoration: none;}button:active {  -webkit-box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);  -moz-box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);  box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);}button::-moz-focus-inner {  padding: 0;  border: 0;}/* table  */table {    border-spacing: 0;    border: 1px solid #ccc;}td, th{    border: 1px solid #ccc;    padding: 5px;}/* code syntax highlight.Documentation: http://www.mdcharm.com/documentation/code_syntax_highlighting.html#custom_your_own */pre .literal,pre .comment,pre .template_comment,pre .diff .header,pre .javadoc {    color: #008000;}pre .keyword,pre .css .rule .keyword,pre .winutils,pre .javascript .title,pre .nginx .title,pre .subst,pre .request,pre .status {    color: #0000FF;    font-weight: bold}pre .number,pre .hexcolor,pre .python .decorator,pre .ruby .constant {    color: #0000FF;}pre .string,pre .tag .value,pre .phpdoc,pre .tex .formula {    color: #D14}pre .title,pre .id {    color: #900;    font-weight: bold}pre .javascript .title,pre .lisp .title,pre .clojure .title,pre .subst {    font-weight: normal}pre .class .title,pre .haskell .type,pre .vhdl .literal,pre .tex .command {    color: #458;    font-weight: bold}pre .tag,pre .tag .title,pre .rules .property,pre .django .tag .keyword {    color: #000080;    font-weight: normal}pre .attribute,pre .variable,pre .lisp .body {    color: #008080}pre .regexp {    color: #009926}pre .class {    color: #458;    font-weight: bold}pre .symbol,pre .ruby .symbol .string,pre .lisp .keyword,pre .tex .special,pre .prompt {    color: #990073}pre .built_in,pre .lisp .title,pre .clojure .built_in {    color: #0086b3}pre .preprocessor,pre .pi,pre .doctype,pre .shebang,pre .cdata {    color: #999;    font-weight: bold}pre .deletion {    background: #fdd}pre .addition {    background: #dfd}pre .diff .change {    background: #0086b3}pre .chunk {    color: #aaa}pre .markdown .header {    color: #800;    font-weight: bold;}pre .markdown .blockquote {    color: #888;}pre .markdown .link_label {    color: #88F;}pre .markdown .strong {    font-weight: bold;}pre .markdown .emphasis {    font-style: italic;}
+   </style>
+   
+   
+</head>
+<body>
+    <h1>C++标准程序库读书笔记</h1>
+
+<h2>CH5 STL标准模板库</h2>
+
+<p><strong>STL组件：</strong></p>
+
+<ul>
+<li>容器<strong><em>containers</em></strong></li>
+<li>迭代器<strong><em>iterator</em></strong></li>
+<li>算法<strong><em>algorithm</em></strong></li>
+</ul>
+
+<blockquote>
+<p>STL的基本观念是数据和操作分离，数据有容器类别加以管理，操作则由可定制的算法定义之。迭代器在两者之间充当粘合剂，使任何算法可以和任何容器交互运作。</p>
+</blockquote>
+
+<p>STL的一个根本特性是，所有组件可以针对任意型别运作，所谓STL就是表示其内的所有组件都是可接受任意型别的templates,前提是这些型别必须能够执行必要操作。</p>
+
+<h3>容器</h3>
+
+<p>容器类别用来管理一组元素：</p>
+
+<ol>
+<li>序列式容器</li>
+<li>关联式容器</li>
+</ol>
+
+<p><strong>序列式容器</strong></p>
+
+<ul>
+<li>vector</li>
+<li>deques</li>
+<li><p>lists</p>
+
+<blockquote>
+<p>lists并没有提供以operator（）直接存取元素的能力，因为lists不支持随机存取，如果采用operator[]会导致不良效能。</p>
+</blockquote></li>
+<li><p>strings</p></li>
+<li><p>arrays</p></li>
+</ul>
+
+<p><strong>关联式容器</strong>
+通常关联式容器是有二叉树生成的。关联式容器的主要差别在于元素的类型以及处理重复元素时的方式。</p>
+
+<ul>
+<li>sets</li>
+<li>multisets</li>
+<li>maps</li>
+<li>multimaps</li>
+</ul>
+
+<p><strong>容器配接器</strong></p>
+
+<ul>
+<li>stacks</li>
+<li>queues</li>
+<li><p>priority queues</p>
+
+<blockquote>
+<p>其中的元素可以拥有不同的优先权，所谓优先权，乃是基于程序员提供的排序准则而定义。</p>
+</blockquote></li>
+</ul>
+
+<p><strong>迭代器</strong></p>
+
+<ul>
+<li>operator*</li>
+<li>operator++</li>
+<li>operator== operator!=</li>
+<li>operator=</li>
+<li>begin()</li>
+<li><p>end()</p>
+
+<blockquote>
+<p>begin()和end()形成了一个半开区间，从第一个元素开始，到哦最后一个元素的下一位置结束。</p>
+</blockquote></li>
+</ul>
+
+<p><strong>迭代器分类</strong></p>
+
+<ul>
+<li><p>双向迭代器</p>
+
+<blockquote>
+<p>双向迭代器可以双向行进，以递增运算前进或者以递减运算后退。</p>
+</blockquote></li>
+<li><p>随机存取迭代器</p>
+
+<blockquote>
+<p>随机存取不仅具备双向迭代器的所有属性，还具备随机访问能力。
+只有随机存取迭代器支持operator&lt;,双向迭代器支持operator!=</p>
+</blockquote></li>
+</ul>
+
+<h3>算法</h3>
+
+<p>算法并非容器类别的成员函数，而是一种搭配迭代器使用的全局函数。这里所阐述的并非面向对象思维模式，而是泛型函数式编程思维模式。</p>
+
+<p><strong>这种处理方式的缺点</strong></p>
+
+<ul>
+<li>用法有失直观</li>
+<li>某些数据结构和算法之间并不兼容</li>
+<li>某些容器和算法之间虽然勉强兼容，但是毫无用处。</li>
+</ul>
+
+<h3>配接器</h3>
+
+<ol>
+<li>insert iterator 安插型迭代器</li>
+<li>stream iterator 流迭代器</li>
+<li>reverse iterator 逆向迭代器</li>
+</ol>
+
+<p><strong>安插型迭代器</strong></p>
+
+<ul>
+<li>如果你对某个元素设值，会引发对其所属群集的安插操作</li>
+<li>单步前进不会造成任何动静</li>
+</ul>
+
+<blockquote>
+<ol>
+<li>back inserters</li>
+<li>front inserters</li>
+<li>general inserters</li>
+</ol>
+</blockquote>
+
+<h3>更易型算法</h3>
+
+<p>更易性算法用在关联式容器上市，会出现错误，它会改变某位置上的值，进而破坏其已序特性，那就推翻了关联式容器的基本原则：容器内的元素总是根据某个排序准则自动排序。为了保证这个原则，关联式容器的所有迭代器均被声明为指向常量。</p>
+
+<p><strong>如何从关联容器中删除元素：</strong>
+调用他们的成员函数即可（比如erase()）</p>
+
+<p><strong><em>为了追求高效率，要永远优先选用成员函数</em></strong></p>
+
+<h3>判断式</h3>
+
+<p>STL要求，面对相同的值，判断式必须得出相同的结果。</p>
+
+<ol>
+<li><p>一元判断式</p>
+
+<blockquote>
+<p>检查唯一参数的某项特性</p>
+</blockquote></li>
+<li><p>二元判断式</p>
+
+<blockquote>
+<p>比较两个参数的特定属性</p>
+</blockquote></li>
+</ol>
+
+<h3>仿函数</h3>
+
+<p>如果你定义了一个对象，行为像函数，它就可以被当作函数来用。</p>
+
+<p><strong>什么才算是拥有函数行为呢？</strong>
+是指可以”使用小括号传递参数，借以调用某个东西“</p>
+
+<h3>容器内的元素</h3>
+
+<p><strong>容器元素的条件：</strong></p>
+
+<ul>
+<li>可以透过copy构造函数进行复制。副本与原本必须相等，即所有的相等测试的结果都必须显示，原本与副本的行为一致。</li>
+<li>必须透过assignment操作符完成复制操作。容器和算法都是用assignment操作符，才能以新元素改写旧元素。</li>
+<li>必须可以透过析构函数完成销毁动作。因此析构函数不能被设计为private，依C++惯例，析构函数绝不能抛出任何异常。</li>
+<li>对序列式容器而言，元素的default构造函数必须可用。</li>
+<li>对于某些动作而言，必须定义operator==以执行相等测试。</li>
+<li>在关联式容器中，元素必须定义出排序准则，缺省情况下是operator&lt;，透过仿函数less&lt;&gt;被调用。</li>
+</ul>
+
+<p>**value语意VSreference语意</p>
+
+<p>STL只支持value语意，不支持reference语意。好处是：</p>
+
+<ul>
+<li>元素的拷贝简单</li>
+<li>使用reference时容易导致错误。</li>
+</ul>
+
+<p>缺点是：</p>
+
+<ul>
+<li>拷贝元素可能导致不好的效能，有时甚至无法拷贝</li>
+<li>无法在数个不同的容器中管理同一份对象。</li>
+</ul>
+
+<h3>STL内部的错误处理与异常处理</h3>
+
+<p>使用STL时，必须满足以下条件：</p>
+
+<ul>
+<li>迭代器务必有效。</li>
+<li>一个迭代器如果指向逾尾位置，它并不指向任何对象，因此不能对它调用operator* 或 operator-&gt;</li>
+<li>区间（range）必须是合法的：</li>
+</ul>
+
+<blockquote>
+<ol>
+<li>用以指出某个区间的前后迭代器，必须指向同一个位置。</li>
+<li>从第一个迭代器出发，必须可以到达第二个迭代器所指位置。</li>
+</ol>
+</blockquote>
+
+<ul>
+<li>如果涉及的区间不只一个，第二区间及后继各区间必须拥有至少和第一区间一样多的元素。</li>
+<li>覆盖动作中的目标区间必须拥有足够元素，否则必须采用插入型迭代器。</li>
+</ul>
+
+</body>
+</html>

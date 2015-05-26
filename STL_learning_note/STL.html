@@ -1,0 +1,397 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+   <meta http-equiv="content-type" content="text/html;charset=UTF-8">
+   <style type="text/css">
+   /*CSS stylesheet is based on killwing's flavored markdown style:https://gist.github.com/2937864*/body{    margin: 0 auto;    font: 13px/1.231 Helvetica, Arial, sans-serif;    color: #444444;    line-height: 1;    max-width: 960px;    padding: 5px;}h1, h2, h3, h4 {    color: #111111;    font-weight: 400;}h1, h2, h3, h4, h5, p {    margin-bottom: 16px;    padding: 0;}h1 {    font-size: 28px;}h2 {    font-size: 22px;    margin: 20px 0 6px;}h3 {    font-size: 21px;}h4 {    font-size: 18px;}h5 {    font-size: 16px;}a {    color: #0099ff;    margin: 0;    padding: 0;    vertical-align: baseline;}a:link,a:visited{ text-decoration:none;}a:hover{ text-decoration:underline;}ul, ol {    padding: 0;    margin: 0;}li {    line-height: 24px;    margin-left: 44px;}li ul, li ul {    margin-left: 24px;}ul, ol {    font-size: 14px;    line-height: 20px;    max-width: 540px;}p {    font-size: 14px;    line-height: 20px;    max-width: 540px;    margin-top: 3px;}pre {    padding: 0px 4px;    max-width: 800px;    white-space: pre-wrap;    font-family: Consolas, Monaco, Andale Mono, monospace;    line-height: 1.5;    font-size: 13px;    border: 1px solid #ddd;    background-color: #f7f7f7;    border-radius: 3px;}code {    font-family: Consolas, Monaco, Andale Mono, monospace;    line-height: 1.5;    font-size: 13px;    border: 1px solid #ddd;    background-color: #f7f7f7;    border-radius: 3px;}pre code {    border: 0px;}aside {    display: block;    float: right;    width: 390px;}blockquote {    border-left:.5em solid #40AA53;    padding: 0 2em;    margin-left:0;    max-width: 476px;}blockquote  cite {    font-size:14px;    line-height:20px;    color:#bfbfbf;}blockquote cite:before {    content: '\2014 \00A0';}blockquote p {      color: #666;    max-width: 460px;}hr {    height: 1px;    border: none;    border-top: 1px dashed #0066CC}button,input,select,textarea {  font-size: 100%;  margin: 0;  vertical-align: baseline;  *vertical-align: middle;}button, input {  line-height: normal;  *overflow: visible;}button::-moz-focus-inner, input::-moz-focus-inner {  border: 0;  padding: 0;}button,input[type="button"],input[type="reset"],input[type="submit"] {  cursor: pointer;  -webkit-appearance: button;}input[type=checkbox], input[type=radio] {  cursor: pointer;}/* override default chrome & firefox settings */input:not([type="image"]), textarea {  -webkit-box-sizing: content-box;  -moz-box-sizing: content-box;  box-sizing: content-box;}input[type="search"] {  -webkit-appearance: textfield;  -webkit-box-sizing: content-box;  -moz-box-sizing: content-box;  box-sizing: content-box;}input[type="search"]::-webkit-search-decoration {  -webkit-appearance: none;}label,input,select,textarea {  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;  font-size: 13px;  font-weight: normal;  line-height: normal;  margin-bottom: 18px;}input[type=checkbox], input[type=radio] {  cursor: pointer;  margin-bottom: 0;}input[type=text],input[type=password],textarea,select {  display: inline-block;  width: 210px;  padding: 4px;  font-size: 13px;  font-weight: normal;  line-height: 18px;  height: 18px;  color: #808080;  border: 1px solid #ccc;  -webkit-border-radius: 3px;  -moz-border-radius: 3px;  border-radius: 3px;}select, input[type=file] {  height: 27px;  line-height: 27px;}textarea {  height: auto;}/* grey out placeholders */:-moz-placeholder {  color: #bfbfbf;}::-webkit-input-placeholder {  color: #bfbfbf;}input[type=text],input[type=password],select,textarea {  -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;  -moz-transition: border linear 0.2s, box-shadow linear 0.2s;  transition: border linear 0.2s, box-shadow linear 0.2s;  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);}input[type=text]:focus, input[type=password]:focus, textarea:focus {  outline: none;  border-color: rgba(82, 168, 236, 0.8);  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);}/* buttons */button {  display: inline-block;  padding: 4px 14px;  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;  font-size: 13px;  line-height: 18px;  -webkit-border-radius: 4px;  -moz-border-radius: 4px;  border-radius: 4px;  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);  background-color: #0064cd;  background-repeat: repeat-x;  background-image: -khtml-gradient(linear, left top, left bottom, from(#049cdb), to(#0064cd));  background-image: -moz-linear-gradient(top, #049cdb, #0064cd);  background-image: -ms-linear-gradient(top, #049cdb, #0064cd);  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #049cdb), color-stop(100%, #0064cd));  background-image: -webkit-linear-gradient(top, #049cdb, #0064cd);  background-image: -o-linear-gradient(top, #049cdb, #0064cd);  background-image: linear-gradient(top, #049cdb, #0064cd);  color: #fff;  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);  border: 1px solid #004b9a;  border-bottom-color: #003f81;  -webkit-transition: 0.1s linear all;  -moz-transition: 0.1s linear all;  transition: 0.1s linear all;  border-color: #0064cd #0064cd #003f81;  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);}button:hover {  color: #fff;  background-position: 0 -15px;  text-decoration: none;}button:active {  -webkit-box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);  -moz-box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);  box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);}button::-moz-focus-inner {  padding: 0;  border: 0;}/* table  */table {    border-spacing: 0;    border: 1px solid #ccc;}td, th{    border: 1px solid #ccc;    padding: 5px;}/* code syntax highlight.Documentation: http://www.mdcharm.com/documentation/code_syntax_highlighting.html#custom_your_own */pre .literal,pre .comment,pre .template_comment,pre .diff .header,pre .javadoc {    color: #008000;}pre .keyword,pre .css .rule .keyword,pre .winutils,pre .javascript .title,pre .nginx .title,pre .subst,pre .request,pre .status {    color: #0000FF;    font-weight: bold}pre .number,pre .hexcolor,pre .python .decorator,pre .ruby .constant {    color: #0000FF;}pre .string,pre .tag .value,pre .phpdoc,pre .tex .formula {    color: #D14}pre .title,pre .id {    color: #900;    font-weight: bold}pre .javascript .title,pre .lisp .title,pre .clojure .title,pre .subst {    font-weight: normal}pre .class .title,pre .haskell .type,pre .vhdl .literal,pre .tex .command {    color: #458;    font-weight: bold}pre .tag,pre .tag .title,pre .rules .property,pre .django .tag .keyword {    color: #000080;    font-weight: normal}pre .attribute,pre .variable,pre .lisp .body {    color: #008080}pre .regexp {    color: #009926}pre .class {    color: #458;    font-weight: bold}pre .symbol,pre .ruby .symbol .string,pre .lisp .keyword,pre .tex .special,pre .prompt {    color: #990073}pre .built_in,pre .lisp .title,pre .clojure .built_in {    color: #0086b3}pre .preprocessor,pre .pi,pre .doctype,pre .shebang,pre .cdata {    color: #999;    font-weight: bold}pre .deletion {    background: #fdd}pre .addition {    background: #dfd}pre .diff .change {    background: #0086b3}pre .chunk {    color: #aaa}pre .markdown .header {    color: #800;    font-weight: bold;}pre .markdown .blockquote {    color: #888;}pre .markdown .link_label {    color: #88F;}pre .markdown .strong {    font-weight: bold;}pre .markdown .emphasis {    font-style: italic;}
+   </style>
+   
+   
+</head>
+<body>
+    <h1><strong>STL</strong></h1>
+
+<hr>
+
+<h2><strong>基本概念</strong></h2>
+
+<p>standard template library</p>
+
+<p>为数据管理，数据操作而操作</p>
+
+<p>函数模板一般都是对应算法的。</p>
+
+<hr>
+
+<h3>类模板</h3>
+
+<p>成为<strong>容器</strong>，包括<strong>标准容器</strong>和<strong>容器适配器</strong>，也叫<strong>特殊容器</strong>，还有一部分称为<strong>函数对象</strong>（function），也叫<strong>仿函数</strong>，以及还包括<strong>内存分配器（allocator）</strong>（默认使用new来分配内存）。</p>
+
+<p>标准容器包括 <strong>序列式容器</strong>以及<strong>关联式容器</strong>。标准容器的内部类型叫<strong>迭代器</strong>（iterator）。  </p>
+
+<p>迭代器封装<strong>指针</strong>，支持*，-&gt;，以及++,==,!=。</p>
+
+<p>在数组里面，指针是最原始的迭代器，零封装。</p>
+
+<p>各个容器一般都提供一个迭代器提示终点。</p>
+
+<h4>标准容器</h4>
+
+<h5>标准容器的共性</h5>
+
+<p>构造函数：无参构造，拷贝构造，区间构造（标准容器中用迭代器表示位置，区间就是用两个迭代器表示的两个位置）。</p>
+
+<p>迭代器相关：.begin(),.end(),.rbegin(),.rend()
+          正向迭代器：iterator  反向迭代器：reverse_iterator  只读迭代器：const_iterator  const_reverse_iterator</p>
+
+<p>插入：insert（pos,element),pos是个迭代器</p>
+
+<p>删除：erase（pos）   erase(pos_begin,pos_end)(区间删除，含头不含尾)</p>
+
+<p>清除：clear()</p>
+
+<p>大小：.size()  .max_size() .empty()</p>
+
+<p>交换：.swap(c2)   swap(c1,c2)   </p>
+
+<p>运算符：=,&gt;,&lt;,&gt;=,&lt;=,==,!=</p>
+
+<h4>序列式容器</h4>
+
+<p>vector，deque(双端队列),list</p>
+
+<h5>序列式容器的共性</h5>
+
+<p>构造函数 初始化默认零初始化</p>
+
+<p>插入 .insert(pos,n,element) .insert(pos,pos_beg,pos_end)</p>
+
+<p>赋值 assign(n,element) .assign(pos_beg,pos_end)</p>
+
+<p>调整 .resize(n,element = 零初始化)</p>
+
+<p>首尾 .front() .back() 返回的是引用，所以可以修改。</p>
+
+<p>增删 .push_back(element) .pop_back()</p>
+
+<h5>序列式容器的个性</h5>
+
+<p><strong>vector的个性：</strong></p>
+
+<ul>
+<li>.capacity()  <strong>当前容量</strong></li>
+<li>.reserve(n) <strong>约定容量</strong></li>
+<li>.operator<a href="i"></a>(不检查越界) .at(i)（越界会抛出异常） <strong>下标[]</strong></li>
+</ul>
+
+<p><strong>deque的个性</strong></p>
+
+<ul>
+<li>.operator<a href="i"></a>(不检查越界) .at(i)（越界会抛出异常） <strong>下标[]</strong></li>
+<li>.push_front(element) .pop_front()  <strong>增删</strong></li>
+</ul>
+
+<p><strong>list的个性</strong></p>
+
+<ul>
+<li>.push_front(element) .pop_front() .remove(element) //不支持下标[]<strong>增删</strong></li>
+<li>.unique() <strong>除重</strong> 相邻的重复元素只保留一个</li>
+<li>.sort() <strong>排序</strong>  默认用小于符号比较，从小到大排序</li>
+<li>.reverse() <strong>逆序</strong> 颠倒链表中的元素顺序</li>
+<li>.splice(pos,list2) .splice(pos,list2,pos) .splice(pos,list2,pos_beg,pos_end) <strong>转移</strong></li>
+<li>.merge(list2) <strong>归并</strong></li>
+</ul>
+
+<h5>关联式容器(都是用二叉查找树来实现)</h5>
+
+<p>数据集--set(不允许重复)  multiset(允许重复)   map(关键字不允许重复)   multimap（允许重复关键字）   </p>
+
+<p><strong>关联式容器的共性</strong></p>
+
+<ul>
+<li>都是使用二叉树查找，都自动根据关键字排序，都是默认升序</li>
+<li><strong>查找</strong> .find(key)返回一个迭代器指向找到的第一个元素，没找到的话就返回一个指向无效位置的迭代器，返回.end()</li>
+<li><strong>统计</strong> .count(key)统计关键字等于k的元素的个数</li>
+<li><strong>删除</strong> 删除关键字等于k的所有元素。</li>
+<li><strong>区间</strong> .lower_bound(key)取得关键字为key的第一个元素的位置 .upper_bound(key) 取得关键字为key的最后一个元素之后的位置  .equal_range(key) 一次取得关键字为key的元素的区间，返回的是一个pair，用起来比较不方便。</li>
+<li><strong>插入</strong> .insert(element)<br></li>
+</ul>
+
+<h3>函数模板</h3>
+
+<p>称为<strong>通用算法</strong>，一般需要的话从资料上查询就可以了，包括很多模板。它是以来与迭代器来实现的。</p>
+
+<p><strong>区间</strong>由起始位置以及超越终点的位置组成，半开半闭区间，含头不含尾。</p>
+
+<hr>
+
+<h3>实例代码</h3>
+
+<p>第一个是一个对于排序算法的使用</p>
+
+<pre><code>    #include &lt;iostream&gt;
+    #include &lt;string&gt;
+    #include &lt;algorithm&gt;
+    using namespace std;
+
+    class Person{
+        string name;
+        int age;
+
+        public:
+            Person(const char* name,int age):name(name),age(age){}
+            friend ostream&amp; operator&lt;&lt;(ostream&amp; o,const Person&amp; p){
+                return o&lt;&lt;p.name&lt;&lt;&#39;:&#39;&lt;&lt;p.age;
+            }
+            friend bool operator&lt;(const Person&amp; a,const Person&amp; b){
+                return a.age&lt;b.age;
+            }
+    }
+
+    template&lt;typename T&gt;
+    void print(T b,T e)
+    {
+        while(b != e)
+            cout &lt;&lt; *b++ &lt;&lt;&#39; &#39;;     
+    }
+    int main()
+    {
+        int a[6] = {8,1,6,3,2,5};
+        double b[4] = {5.5,3.3,6.6,2.2};
+        string c[5] = {&quot;nice&quot;,&quot;to&quot;,&quot;see&quot;,&quot;you&quot;,&quot;all&quot;};
+        Person d[3] ={Person(&quot;wuwnexiao&quot;,18),Person(&quot;shenlin&quot;,20),Person(&quot;jianguo&quot;,33)};
+        sort(a,a+6);sort(b,b+4);sort(c,c+5);sort(d,d+3);
+        print(a,a+6);print(b,b+4);print(c,c+5);print(d,d+3);
+
+    }
+</code></pre>
+
+<p>第二个对容器共性的使用</p>
+
+<pre><code>    #include&lt;iostream&gt;
+    using namespace std;
+    #include&lt;vector&gt;
+    #include &lt;algorithm&gt;
+
+    int main()
+    {
+        int a[5] = {33,11,55,22,44};
+        vector&lt;int&gt; vi(a,a+5);
+
+        cout &lt;&lt; vi.size() &lt;&lt; endl;
+        cout &lt;&lt; vi.begin() &lt;&lt; endl;
+        sort(vi.begin(),vi.end());
+        vector&lt;int&gt; iterator b = vi.begin();
+        while(b ！= vi.end())
+        {
+            cout &lt;&lt; *b &lt;&lt; &#39; &#39;;
+        }
+        cout &lt;&lt; endl;
+
+    }
+</code></pre>
+
+<p>第三个对序列式共性的使用</p>
+
+<pre><code>    #include &lt;iostream&gt;
+    #include &lt;deque&gt;
+    using namespace std;
+    #include &quot;print.h&quot;
+    #include &lt;string&gt;
+
+    int main()
+    {
+      deque&lt;string&gt; ds;
+      //deque&lt;vector&lt;int&gt; &gt;;
+
+      //ds.push_back(&quot;曾文武&quot;);
+      ds.push_back(&quot;ss&quot;);
+      ds.push_back(&quot;学校圈&quot;);
+      ds.push_back(&quot;高上&quot;);
+
+      print(ds.begin(),ds.end());
+
+      ds.insert(++++ds.begin(),2,&quot;芙蓉&quot;)；
+
+      print(ds.begin(),ds.end());
+
+      string s[3] = {&quot;事实上&quot;,&quot;迭代&quot;,&quot;对方是否&quot;};
+
+      ds.insert(----ds.end(),s,s+3);
+
+      print(ds.begin(),ds.end());
+      cout &lt;&lt; &quot;front&quot; &lt;&lt;ds.front()&lt;&lt; &quot;,back:&quot;&lt;&lt;ds.back()&lt;&lt;endl;
+
+      ds.pop_back();
+      ds.pop_back();
+
+      ds.resize(12,&quot;过撒旦&quot;);
+
+      print(ds.begin(),ds.end());
+
+      ds.assign(5,&quot;康森铃&quot;);
+      print(ds.begin(),ds.end());
+      ds.front() = &quot;孙东东&quot;;
+      ds.back() = &quot;两证&quot;;
+      print(ds.begin(),ds.end());
+    }
+</code></pre>
+
+<p>第四个 对vector个性的使用</p>
+
+<pre><code>    #include &lt;iostream&gt;
+    using namespace std;
+
+    #include &lt;vector&gt;
+    #include &quot;print.h&quot;
+    #include &lt;exception&gt;
+    #include &lt;typeinfo&gt;
+    void print(const vector&lt;int&gt;&amp; v);
+    int main()
+    {
+      vector&lt;double&gt; vd,vv;
+
+      for(int i = 0;i&lt;9;i++)
+      {
+        vd.push_back(i+0.1);
+        cout &lt;&lt; &amp;*vd.begin()&lt;&lt; &quot;:&quot;;
+        cout &lt;&lt; vd.size() &lt;&lt; &quot;/&quot; &lt;&lt; vd.capacity() &lt;&lt; endl;
+      }
+      cout &lt;&lt; &quot;----------&quot;&lt;&lt; endl;
+      vv.reserve(9);
+      for(int i = 0;i&lt;9;i++)
+      {
+        vd.push_back(i+0.1);
+        cout &lt;&lt; vv.size() &lt;&lt; &quot;/&quot; &lt;&lt; vv.capacity() &lt;&lt; endl;
+      }
+
+      vd[3] = 123.45;
+      vv.at(5) = 67.8;
+
+      for(int i = 0;i&lt;vd.size();i++)
+      {
+        cout &lt;&lt; vd[i]&lt;&lt; &quot; &quot;;
+      }
+      cout &lt;&lt; endl;
+      try{
+      for(int i = 0;i&lt;=vd.size();i++)
+      {
+        cout &lt;&lt; vd.at(i)&lt;&lt; &quot; &quot;;
+      }
+      cout &lt;&lt; endl;
+      }
+      catch(exception&amp; e)
+      {
+        cout &lt;&lt; &quot;异常&quot;&lt;&lt;e.what() &lt;&lt; endl;
+        cout &lt;&lt; &quot;类型&quot;&lt;&lt;typeid(e).name()&lt;&lt;endl;
+      }
+      int m = 3,n=5;
+      vector&lt;vector&lt;int&gt; &gt;vvi(m,vector&lt;int&gt;(n));
+      //vector&lt;vector&lt;int&gt; &gt;ivv;
+      vvi.resize(m+3);
+      vvi[1].assign(9,1);
+      vvi[5].assign(4,5);
+      print(vvi);
+    }
+
+    void print(const vector&lt;vector&lt;int&gt; &gt;&amp; v)
+    {
+      for(int i = 0;i&lt;v.size();i++)
+      {
+        for(int j = 0;j&lt;v[i].size();j++)
+        {
+          cout &lt;&lt; v[i][j] &lt;&lt;&quot; &quot;;
+        }  
+        cout &lt;&lt; endl;
+      }
+    }    
+</code></pre>
+
+<p>第五个 对deque的个性的使用</p>
+
+<pre><code class="cpp"><span class="preprocessor">#include &lt;iostream&gt;</span>
+<span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;
+<span class="preprocessor">#include &lt;deque&gt;</span>
+<span class="preprocessor">#include "print.h"</span>
+
+<span class="keyword">int</span> main()
+{
+  <span class="stl_container"><span class="built_in">deque</span>&lt;<span class="keyword">char</span>&gt;</span> dc;
+  dc.push_back(<span class="number">97</span>);
+  dc.push_back(<span class="string">'c'</span>);
+  dc.push_front(<span class="string">'s'</span>);
+  dc.push_front(<span class="string">'d'</span>);
+  dc.push_back(<span class="string">'k'</span>);
+  dc.push_front(<span class="string">'$'</span>);
+  print(dc.begin(),dc.end());
+  dc[<span class="number">1</span>] = <span class="string">'t'</span>;
+  <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i&lt;dc.size();i++)
+  {
+    <span class="built_in">cout</span> &lt;&lt; dc[i]&lt;&lt;<span class="string">" "</span>;
+  }
+  <span class="built_in">cout</span> &lt;&lt; endl;
+
+  dc.pop_back();
+  dc.pop_front();
+  print(dc.begin(),dc.end());
+}
+</code></pre>
+
+<p>第六个 对list个性的使用</p>
+
+<pre><code class="cpp"><span class="preprocessor">#include &lt;iostream&gt;</span>
+<span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;
+<span class="preprocessor">#include &lt;list&gt;</span>
+<span class="preprocessor">#include　&lt;print.</span>h&gt;
+#include &lt;cassert&gt;
+<span class="keyword">bool</span> compare(<span class="keyword">int</span> x,<span class="keyword">int</span> y)
+{
+  x%=3;y%=3;
+  <span class="keyword">return</span> x&lt;y;
+}
+<span class="keyword">int</span> main()
+{
+  <span class="keyword">int</span> a[10] = {<span class="number">3</span>,<span class="number">8</span>,<span class="number">8</span>,<span class="number">8</span>,<span class="number">5</span>,<span class="number">5</span>,<span class="number">1</span>,<span class="number">8</span>,<span class="number">8</span>,6},b[6] = {<span class="number">9</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">2</span>,<span class="number">7</span>,6};
+  <span class="built_in">list</span>&lt;<span class="keyword">int</span>&gt; li(a,a+10),lili;
+  print(li.begin(),li.end());
+
+  li.unique();
+  print(li.begin(),li.end());
+
+  li.sort();
+  print(li.begin(),li.end());
+
+  li.unique();
+  print(li.begin(),li.end());
+
+  li.reverse();
+  print(li.begin(),li.end());
+
+  li.splice(li.begin(),lili);
+
+  print(li.begin(),li.end());
+
+  assert(lili,empty());
+
+  li.remove(5);
+  print(li.begin(),li.end());
+
+  li.sort();
+  print(li.begin(),li.end());
+
+  lili.push_back(5);
+  lili.push_back(4);
+  lili.push_back(7);
+
+  print(lili.begin(),lili.end());
+  li.merge(lili);
+  print(li.begin(),li.end());
+
+  lili.sort(greater&lt;<span class="keyword">int</span>&gt;())
+  lili.sort(compare());
+  print(lili.begin(),lili.end());
+}
+</code></pre>
+
+</body>
+</html>
