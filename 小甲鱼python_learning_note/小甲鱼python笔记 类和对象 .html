@@ -164,6 +164,26 @@ OOP  面向对象编程
 </code></pre>
 
 <p>类中定义的属性,方法是静态变量，即使删除了类，实例也可调用方法。</p>
+
+<h2>一些相关的BIF</h2>
+
+<p><strong>hasattr(object,name)</strong></p>
+
+<blockquote>
+<p>判断是否有该属性</p>
+</blockquote>
+
+<p><strong>getattr(object,name[,default])</strong></p>
+
+<p><strong>setattr(object,name,value)</strong></p>
+
+<p><strong>delattr(object,name)</strong></p>
+
+<blockquote>
+<p>删除对象中指定的属性，如果不存在，跳出一个attributeerror的异常</p>
+</blockquote>
+
+<p><strong>property(fget = None,fset = None,fdel = None,doc = None)</strong></p>
 
 </body>
 </html>
