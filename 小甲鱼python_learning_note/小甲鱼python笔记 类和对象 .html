@@ -184,6 +184,62 @@ OOP  面向对象编程
 </blockquote>
 
 <p><strong>property(fget = None,fset = None,fdel = None,doc = None)</strong></p>
+
+<h2>魔法方法:构造和析构</h2>
+
+<p><strong>_<em>new</em>_(cls[,...])</strong></p>
+
+<p>在实例化是，第一个被默认执行的是<strong><strong>new</strong>(cls[,....])</strong></p>
+
+<pre><code>    class Capstr(str):
+        def __new__(cls,string):
+            string = string.upper()
+            return str.__new__(cls,string)
+
+    a = Capstr(&quot;i love you&quot;)
+    print a
+</code></pre>
+
+<p><strong>_<em>del</em>_(self)</strong></p>
+
+<p>垃圾回收机制自动调用该方法来销毁无用的变量</p>
+
+<pre><code>    class C:
+        def __init__(self):
+            print(&quot;我是__init__  我被调用&quot;)
+        def __del__(self):
+            print(&quot;我是__del__  我被调用&quot;)        
+    c1 = C()
+    del c1
+</code></pre>
+
+<h2>魔法方法：算术运算</h2>
+
+<pre><code>    class New_int(int):
+        def __add__(self,other):
+            return int.__sub__(self,other)
+        def __sub__(self,other):
+            return int.__add__(self,other)
+    a = New_int(3)
+    b = New_int(5)
+    print a+b !
+</code></pre>
+
+<p><img src="C:/Users/Admin/Desktop/QQ%E5%9B%BE%E7%89%8720150527155455.jpg" alt="QQ图片20150527155455.jpg"></p>
+
+<p><img src="C:/Users/Admin/Desktop/QQ%E5%9B%BE%E7%89%8720150527160502.png" alt="QQ图片20150527160502.png"></p>
+
+<p><img src="C:/Users/Admin/Desktop/youguanshuxing%20.png" alt="youguanshuxing .png"></p>
+
+<p><img src="C:/Users/Admin/Desktop/QQ%E5%9B%BE%E7%89%8720150527160659.png" alt="QQ图片20150527160659.png"></p>
+
+<p><img src="C:/Users/Admin/Desktop/QQ%E5%9B%BE%E7%89%8720150527160733.png" alt="QQ图片20150527160733.png"></p>
+
+<p><img src="C:/Users/Admin/Desktop/QQ%E5%9B%BE%E7%89%8720150527160811.png" alt="QQ图片20150527160811.png"></p>
+
+<p><img src="C:/Users/Admin/Desktop/QQ%E5%9B%BE%E7%89%8720150527160847.png" alt="QQ图片20150527160847.png"></p>
+
+<p><img src="C:/Users/Admin/Desktop/QQ%E5%9B%BE%E7%89%8720150527160936.png" alt="QQ图片20150527160936.png"></p>
 
 </body>
 </html>

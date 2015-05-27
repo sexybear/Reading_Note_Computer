@@ -155,7 +155,63 @@ python严格要求方法需要有实例才能被调用，这种限制起始就�
 **property(fget = None,fset = None,fdel = None,doc = None)**
 
 
+##魔法方法:构造和析构
 
+**\__new__(cls[,...])**
+
+在实例化是，第一个被默认执行的是**__new__(cls[,....])**
+
+        class Capstr(str):
+            def __new__(cls,string):
+                string = string.upper()
+                return str.__new__(cls,string)
+                
+        a = Capstr("i love you")
+        print a
+                
+**\__del__(self)**
+
+垃圾回收机制自动调用该方法来销毁无用的变量
+
+        class C:
+            def __init__(self):
+                print("我是__init__  我被调用")
+            def __del__(self):
+                print("我是__del__  我被调用")        
+        c1 = C()
+        del c1
+        
+
+##魔法方法：算术运算
+
+        class New_int(int):
+            def __add__(self,other):
+                return int.__sub__(self,other)
+            def __sub__(self,other):
+                return int.__add__(self,other)
+        a = New_int(3)
+        b = New_int(5)
+        print a+b !
+        
+        
+![QQ图片20150527155455.jpg](C:/Users/Admin/Desktop/QQ图片20150527155455.jpg "")
+
+![QQ图片20150527160502.png](C:/Users/Admin/Desktop/QQ图片20150527160502.png "")
+
+![youguanshuxing .png](C:/Users/Admin/Desktop/youguanshuxing .png "")
+
+![QQ图片20150527160659.png](C:/Users/Admin/Desktop/QQ图片20150527160659.png "")
+
+![QQ图片20150527160733.png](C:/Users/Admin/Desktop/QQ图片20150527160733.png "")
+
+![QQ图片20150527160811.png](C:/Users/Admin/Desktop/QQ图片20150527160811.png "")
+
+![QQ图片20150527160847.png](C:/Users/Admin/Desktop/QQ图片20150527160847.png "")
+
+![QQ图片20150527160936.png](C:/Users/Admin/Desktop/QQ图片20150527160936.png "")
+
+
+        
 
 
 
