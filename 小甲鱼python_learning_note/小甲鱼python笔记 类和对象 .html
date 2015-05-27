@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+   <meta http-equiv="content-type" content="text/html;charset=UTF-8">
+   <style type="text/css">
+   /*CSS stylesheet is based on killwing's flavored markdown style:https://gist.github.com/2937864*/body{    margin: 0 auto;    font: 13px/1.231 Helvetica, Arial, sans-serif;    color: #444444;    line-height: 1;    max-width: 960px;    padding: 5px;}h1, h2, h3, h4 {    color: #111111;    font-weight: 400;}h1, h2, h3, h4, h5, p {    margin-bottom: 16px;    padding: 0;}h1 {    font-size: 28px;}h2 {    font-size: 22px;    margin: 20px 0 6px;}h3 {    font-size: 21px;}h4 {    font-size: 18px;}h5 {    font-size: 16px;}a {    color: #0099ff;    margin: 0;    padding: 0;    vertical-align: baseline;}a:link,a:visited{ text-decoration:none;}a:hover{ text-decoration:underline;}ul, ol {    padding: 0;    margin: 0;}li {    line-height: 24px;    margin-left: 44px;}li ul, li ul {    margin-left: 24px;}ul, ol {    font-size: 14px;    line-height: 20px;    max-width: 540px;}p {    font-size: 14px;    line-height: 20px;    max-width: 540px;    margin-top: 3px;}pre {    padding: 0px 4px;    max-width: 800px;    white-space: pre-wrap;    font-family: Consolas, Monaco, Andale Mono, monospace;    line-height: 1.5;    font-size: 13px;    border: 1px solid #ddd;    background-color: #f7f7f7;    border-radius: 3px;}code {    font-family: Consolas, Monaco, Andale Mono, monospace;    line-height: 1.5;    font-size: 13px;    border: 1px solid #ddd;    background-color: #f7f7f7;    border-radius: 3px;}pre code {    border: 0px;}aside {    display: block;    float: right;    width: 390px;}blockquote {    border-left:.5em solid #40AA53;    padding: 0 2em;    margin-left:0;    max-width: 476px;}blockquote  cite {    font-size:14px;    line-height:20px;    color:#bfbfbf;}blockquote cite:before {    content: '\2014 \00A0';}blockquote p {      color: #666;    max-width: 460px;}hr {    height: 1px;    border: none;    border-top: 1px dashed #0066CC}button,input,select,textarea {  font-size: 100%;  margin: 0;  vertical-align: baseline;  *vertical-align: middle;}button, input {  line-height: normal;  *overflow: visible;}button::-moz-focus-inner, input::-moz-focus-inner {  border: 0;  padding: 0;}button,input[type="button"],input[type="reset"],input[type="submit"] {  cursor: pointer;  -webkit-appearance: button;}input[type=checkbox], input[type=radio] {  cursor: pointer;}/* override default chrome & firefox settings */input:not([type="image"]), textarea {  -webkit-box-sizing: content-box;  -moz-box-sizing: content-box;  box-sizing: content-box;}input[type="search"] {  -webkit-appearance: textfield;  -webkit-box-sizing: content-box;  -moz-box-sizing: content-box;  box-sizing: content-box;}input[type="search"]::-webkit-search-decoration {  -webkit-appearance: none;}label,input,select,textarea {  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;  font-size: 13px;  font-weight: normal;  line-height: normal;  margin-bottom: 18px;}input[type=checkbox], input[type=radio] {  cursor: pointer;  margin-bottom: 0;}input[type=text],input[type=password],textarea,select {  display: inline-block;  width: 210px;  padding: 4px;  font-size: 13px;  font-weight: normal;  line-height: 18px;  height: 18px;  color: #808080;  border: 1px solid #ccc;  -webkit-border-radius: 3px;  -moz-border-radius: 3px;  border-radius: 3px;}select, input[type=file] {  height: 27px;  line-height: 27px;}textarea {  height: auto;}/* grey out placeholders */:-moz-placeholder {  color: #bfbfbf;}::-webkit-input-placeholder {  color: #bfbfbf;}input[type=text],input[type=password],select,textarea {  -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;  -moz-transition: border linear 0.2s, box-shadow linear 0.2s;  transition: border linear 0.2s, box-shadow linear 0.2s;  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);}input[type=text]:focus, input[type=password]:focus, textarea:focus {  outline: none;  border-color: rgba(82, 168, 236, 0.8);  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);}/* buttons */button {  display: inline-block;  padding: 4px 14px;  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;  font-size: 13px;  line-height: 18px;  -webkit-border-radius: 4px;  -moz-border-radius: 4px;  border-radius: 4px;  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);  background-color: #0064cd;  background-repeat: repeat-x;  background-image: -khtml-gradient(linear, left top, left bottom, from(#049cdb), to(#0064cd));  background-image: -moz-linear-gradient(top, #049cdb, #0064cd);  background-image: -ms-linear-gradient(top, #049cdb, #0064cd);  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #049cdb), color-stop(100%, #0064cd));  background-image: -webkit-linear-gradient(top, #049cdb, #0064cd);  background-image: -o-linear-gradient(top, #049cdb, #0064cd);  background-image: linear-gradient(top, #049cdb, #0064cd);  color: #fff;  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);  border: 1px solid #004b9a;  border-bottom-color: #003f81;  -webkit-transition: 0.1s linear all;  -moz-transition: 0.1s linear all;  transition: 0.1s linear all;  border-color: #0064cd #0064cd #003f81;  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);}button:hover {  color: #fff;  background-position: 0 -15px;  text-decoration: none;}button:active {  -webkit-box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);  -moz-box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);  box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);}button::-moz-focus-inner {  padding: 0;  border: 0;}/* table  */table {    border-spacing: 0;    border: 1px solid #ccc;}td, th{    border: 1px solid #ccc;    padding: 5px;}/* code syntax highlight.Documentation: http://www.mdcharm.com/documentation/code_syntax_highlighting.html#custom_your_own */pre .literal,pre .comment,pre .template_comment,pre .diff .header,pre .javadoc {    color: #008000;}pre .keyword,pre .css .rule .keyword,pre .winutils,pre .javascript .title,pre .nginx .title,pre .subst,pre .request,pre .status {    color: #0000FF;    font-weight: bold}pre .number,pre .hexcolor,pre .python .decorator,pre .ruby .constant {    color: #0000FF;}pre .string,pre .tag .value,pre .phpdoc,pre .tex .formula {    color: #D14}pre .title,pre .id {    color: #900;    font-weight: bold}pre .javascript .title,pre .lisp .title,pre .clojure .title,pre .subst {    font-weight: normal}pre .class .title,pre .haskell .type,pre .vhdl .literal,pre .tex .command {    color: #458;    font-weight: bold}pre .tag,pre .tag .title,pre .rules .property,pre .django .tag .keyword {    color: #000080;    font-weight: normal}pre .attribute,pre .variable,pre .lisp .body {    color: #008080}pre .regexp {    color: #009926}pre .class {    color: #458;    font-weight: bold}pre .symbol,pre .ruby .symbol .string,pre .lisp .keyword,pre .tex .special,pre .prompt {    color: #990073}pre .built_in,pre .lisp .title,pre .clojure .built_in {    color: #0086b3}pre .preprocessor,pre .pi,pre .doctype,pre .shebang,pre .cdata {    color: #999;    font-weight: bold}pre .deletion {    background: #fdd}pre .addition {    background: #dfd}pre .diff .change {    background: #0086b3}pre .chunk {    color: #aaa}pre .markdown .header {    color: #800;    font-weight: bold;}pre .markdown .blockquote {    color: #888;}pre .markdown .link_label {    color: #88F;}pre .markdown .strong {    font-weight: bold;}pre .markdown .emphasis {    font-style: italic;}
+   </style>
+   
+   
+</head>
+<body>
+    <h1>python 小甲鱼视频笔记</h1>
+
+<h2>类和对象</h2>
+
+<p>python无处不对象</p>
+
+<h3>对象</h3>
+
+<p>对象 = 属性 + 方法</p>
+
+<p>面向对象编程的特征：</p>
+
+<ul>
+<li>封装 信息隐藏技术</li>
+<li>继承 子类自动共享父类的数据和方法的机制</li>
+<li><p>多态 不同对象对同一方法相应不同的操作</p>
+
+<pre><code>OOA  面向对象分析
+OOD  面向对象设计
+OOP  面向对象编程
+</code></pre></li>
+</ul>
+
+<p><strong><em>python的self = C++的this</em></strong></p>
+
+<pre><code>    class Ball:
+        def setName(self,name):
+            self.name = name
+        def kick(self):
+            print(&quot;我叫%s&quot;%self.name)
+
+    a = Ball()
+    a.setName(&quot;dsdsdf&quot;)
+    b = Ball()
+    b.setNAme(&quot;sdf&quot;)
+    c = Ball()
+    c.setName(&quot;sdsdfsf&quot;)
+    a.kick()
+    c.kick()
+</code></pre>
+
+<p><strong>_<em>init</em>_</strong> 构造函数</p>
+
+<pre><code>    class Ball:
+        def __init__(self,name):
+            self.name = name
+        def kick(self):
+            print(&quot;我叫%s&quot;%self.name)
+    b = Ball(&quot;asdas&quot;)
+    b.kick()
+</code></pre>
+
+<p><strong>共有和私有</strong></p>
+
+<p>对象的属性都是公开的，可以通过点操作符来访问。
+为了实现类似私有的特征，python实现了<strong>name mangling</strong>来操作。</p>
+
+<pre><code>    class Person():
+        name = &quot;xiao&quot;
+        __newname = &quot;sad&quot;
+
+        def getName(self):
+            return self.__name
+    p = Person()
+    print p.name
+    print p.__name    wrong
+    p.getName()
+    print p._Person__name
+</code></pre>
+
+<p><strong>python是伪私有。</strong></p>
+
+<h2>继承</h2>
+
+<pre><code>    class Parent:
+        def hello(self):
+            print(&quot;调用父类的方法&quot;)
+
+    class Parent2:
+        def hello2(self):
+            print(&quot;调用父类2的方法&quot;)
+    class Child(Parent):
+        pass
+
+    class Child2(Parent):
+        def hello(self):
+            print(&quot;调用子类的方法&quot;)
+
+    class Child3(Parent,Parent2):
+        pass
+    p = Parent()
+    p.hello()
+    c = Child()
+    c.hello()
+
+    c2 = Child2()
+    c2.hello()
+</code></pre>
+
+<p>继承方法：</p>
+
+<ul>
+<li>调用未绑定的父类方法</li>
+<li>使用super()函数</li>
+</ul>
+
+<p><strong>当不确定必须要使用多重继承时，要避免使用它。</strong></p>
+
+<h2>类，类对象和实例对象</h2>
+
+<pre><code>    class C：
+        count = 0
+    a = C()
+    b = C()
+    c = C()
+    print a.count
+    print b.count
+    print c.count
+
+    c.count += 10
+    print c.count
+    C.count += 100
+    print a.count
+    print c.count
+</code></pre>
+
+<p>类属性和类对象相互绑定，不会受实例对象影响。如果实例对象的属性和方法名相同，会覆盖方法。</p>
+
+<p><strong>注意</strong></p>
+
+<ul>
+<li>不要试图在一个类里边定义出所有能想到的特性和方法，应该利用继承和组合机制来扩展。</li>
+<li>用不同的词性命名，如属性名用名词，方法名用动词。</li>
+</ul>
+
+<h2>绑定</h2>
+
+<p>python严格要求方法需要有实例才能被调用，这种限制起始就是python所谓的绑定概念。</p>
+
+<pre><code>    class CC:
+        def setXY(self,x,y):
+           self.x = x
+           self.y = y
+        def printxy(self):
+            print(self.x,self.y)
+
+    dd = CC()
+    print dd.__dict__
+    print CC.__dict__
+    dd.setXY(4,5)
+    print dd.__dict__
+    print CC.__dict__
+</code></pre>
+
+<p>类中定义的属性,方法是静态变量，即使删除了类，实例也可调用方法。</p>
+
+</body>
+</html>
