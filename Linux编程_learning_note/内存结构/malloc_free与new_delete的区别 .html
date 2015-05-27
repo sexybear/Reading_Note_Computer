@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+   <meta http-equiv="content-type" content="text/html;charset=UTF-8">
+   <style type="text/css">
+   /*CSS stylesheet is based on killwing's flavored markdown style:https://gist.github.com/2937864*/body{    margin: 0 auto;    font: 13px/1.231 Helvetica, Arial, sans-serif;    color: #444444;    line-height: 1;    max-width: 960px;    padding: 5px;}h1, h2, h3, h4 {    color: #111111;    font-weight: 400;}h1, h2, h3, h4, h5, p {    margin-bottom: 16px;    padding: 0;}h1 {    font-size: 28px;}h2 {    font-size: 22px;    margin: 20px 0 6px;}h3 {    font-size: 21px;}h4 {    font-size: 18px;}h5 {    font-size: 16px;}a {    color: #0099ff;    margin: 0;    padding: 0;    vertical-align: baseline;}a:link,a:visited{ text-decoration:none;}a:hover{ text-decoration:underline;}ul, ol {    padding: 0;    margin: 0;}li {    line-height: 24px;    margin-left: 44px;}li ul, li ul {    margin-left: 24px;}ul, ol {    font-size: 14px;    line-height: 20px;    max-width: 540px;}p {    font-size: 14px;    line-height: 20px;    max-width: 540px;    margin-top: 3px;}pre {    padding: 0px 4px;    max-width: 800px;    white-space: pre-wrap;    font-family: Consolas, Monaco, Andale Mono, monospace;    line-height: 1.5;    font-size: 13px;    border: 1px solid #ddd;    background-color: #f7f7f7;    border-radius: 3px;}code {    font-family: Consolas, Monaco, Andale Mono, monospace;    line-height: 1.5;    font-size: 13px;    border: 1px solid #ddd;    background-color: #f7f7f7;    border-radius: 3px;}pre code {    border: 0px;}aside {    display: block;    float: right;    width: 390px;}blockquote {    border-left:.5em solid #40AA53;    padding: 0 2em;    margin-left:0;    max-width: 476px;}blockquote  cite {    font-size:14px;    line-height:20px;    color:#bfbfbf;}blockquote cite:before {    content: '\2014 \00A0';}blockquote p {      color: #666;    max-width: 460px;}hr {    height: 1px;    border: none;    border-top: 1px dashed #0066CC}button,input,select,textarea {  font-size: 100%;  margin: 0;  vertical-align: baseline;  *vertical-align: middle;}button, input {  line-height: normal;  *overflow: visible;}button::-moz-focus-inner, input::-moz-focus-inner {  border: 0;  padding: 0;}button,input[type="button"],input[type="reset"],input[type="submit"] {  cursor: pointer;  -webkit-appearance: button;}input[type=checkbox], input[type=radio] {  cursor: pointer;}/* override default chrome & firefox settings */input:not([type="image"]), textarea {  -webkit-box-sizing: content-box;  -moz-box-sizing: content-box;  box-sizing: content-box;}input[type="search"] {  -webkit-appearance: textfield;  -webkit-box-sizing: content-box;  -moz-box-sizing: content-box;  box-sizing: content-box;}input[type="search"]::-webkit-search-decoration {  -webkit-appearance: none;}label,input,select,textarea {  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;  font-size: 13px;  font-weight: normal;  line-height: normal;  margin-bottom: 18px;}input[type=checkbox], input[type=radio] {  cursor: pointer;  margin-bottom: 0;}input[type=text],input[type=password],textarea,select {  display: inline-block;  width: 210px;  padding: 4px;  font-size: 13px;  font-weight: normal;  line-height: 18px;  height: 18px;  color: #808080;  border: 1px solid #ccc;  -webkit-border-radius: 3px;  -moz-border-radius: 3px;  border-radius: 3px;}select, input[type=file] {  height: 27px;  line-height: 27px;}textarea {  height: auto;}/* grey out placeholders */:-moz-placeholder {  color: #bfbfbf;}::-webkit-input-placeholder {  color: #bfbfbf;}input[type=text],input[type=password],select,textarea {  -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;  -moz-transition: border linear 0.2s, box-shadow linear 0.2s;  transition: border linear 0.2s, box-shadow linear 0.2s;  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);}input[type=text]:focus, input[type=password]:focus, textarea:focus {  outline: none;  border-color: rgba(82, 168, 236, 0.8);  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);}/* buttons */button {  display: inline-block;  padding: 4px 14px;  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;  font-size: 13px;  line-height: 18px;  -webkit-border-radius: 4px;  -moz-border-radius: 4px;  border-radius: 4px;  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);  background-color: #0064cd;  background-repeat: repeat-x;  background-image: -khtml-gradient(linear, left top, left bottom, from(#049cdb), to(#0064cd));  background-image: -moz-linear-gradient(top, #049cdb, #0064cd);  background-image: -ms-linear-gradient(top, #049cdb, #0064cd);  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #049cdb), color-stop(100%, #0064cd));  background-image: -webkit-linear-gradient(top, #049cdb, #0064cd);  background-image: -o-linear-gradient(top, #049cdb, #0064cd);  background-image: linear-gradient(top, #049cdb, #0064cd);  color: #fff;  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);  border: 1px solid #004b9a;  border-bottom-color: #003f81;  -webkit-transition: 0.1s linear all;  -moz-transition: 0.1s linear all;  transition: 0.1s linear all;  border-color: #0064cd #0064cd #003f81;  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);}button:hover {  color: #fff;  background-position: 0 -15px;  text-decoration: none;}button:active {  -webkit-box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);  -moz-box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);  box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);}button::-moz-focus-inner {  padding: 0;  border: 0;}/* table  */table {    border-spacing: 0;    border: 1px solid #ccc;}td, th{    border: 1px solid #ccc;    padding: 5px;}/* code syntax highlight.Documentation: http://www.mdcharm.com/documentation/code_syntax_highlighting.html#custom_your_own */pre .literal,pre .comment,pre .template_comment,pre .diff .header,pre .javadoc {    color: #008000;}pre .keyword,pre .css .rule .keyword,pre .winutils,pre .javascript .title,pre .nginx .title,pre .subst,pre .request,pre .status {    color: #0000FF;    font-weight: bold}pre .number,pre .hexcolor,pre .python .decorator,pre .ruby .constant {    color: #0000FF;}pre .string,pre .tag .value,pre .phpdoc,pre .tex .formula {    color: #D14}pre .title,pre .id {    color: #900;    font-weight: bold}pre .javascript .title,pre .lisp .title,pre .clojure .title,pre .subst {    font-weight: normal}pre .class .title,pre .haskell .type,pre .vhdl .literal,pre .tex .command {    color: #458;    font-weight: bold}pre .tag,pre .tag .title,pre .rules .property,pre .django .tag .keyword {    color: #000080;    font-weight: normal}pre .attribute,pre .variable,pre .lisp .body {    color: #008080}pre .regexp {    color: #009926}pre .class {    color: #458;    font-weight: bold}pre .symbol,pre .ruby .symbol .string,pre .lisp .keyword,pre .tex .special,pre .prompt {    color: #990073}pre .built_in,pre .lisp .title,pre .clojure .built_in {    color: #0086b3}pre .preprocessor,pre .pi,pre .doctype,pre .shebang,pre .cdata {    color: #999;    font-weight: bold}pre .deletion {    background: #fdd}pre .addition {    background: #dfd}pre .diff .change {    background: #0086b3}pre .chunk {    color: #aaa}pre .markdown .header {    color: #800;    font-weight: bold;}pre .markdown .blockquote {    color: #888;}pre .markdown .link_label {    color: #88F;}pre .markdown .strong {    font-weight: bold;}pre .markdown .emphasis {    font-style: italic;}
+   </style>
+   
+   
+</head>
+<body>
+    <h1>malloc/free与new/delete的区别</h1>
+
+<p><strong>相同点：</strong></p>
+
+<blockquote>
+<p>都可用于申请动态内存和释放内存 </p>
+</blockquote>
+
+<p><strong>不同点：</strong></p>
+
+<blockquote>
+<p>（1）操作对象有所不同。</p>
+
+<p>malloc与free是C++/C 语言的标准库函数，new/delete 是C++的运算符。对于非内部数据类的对象而言，光用maloc/free 无法满足动态对象的要求。对象在创建的同时要自动执行构造函数， 对象消亡之前要自动执行析构函数。由于malloc/free 是库函数而不是运算符，不在编译器控制权限之内，不能够把执行构造函数和析构函数的任务强加malloc/free。</p>
+
+<p>（2）用法上也有所不同。</p>
+
+<p>函数malloc 的原型如下：</p>
+
+<pre><code>   void * malloc(size_t size);
+</code></pre>
+
+<p>用malloc 申请一块长度为length 的整数类型的内存，程序如下：</p>
+
+<pre><code>   int *p = (int *) malloc(sizeof(int) * length);
+</code></pre>
+
+<p>我们应当把注意力集中在两个要素上：“类型转换”和“sizeof”。</p>
+
+<ol>
+<li>malloc 返回值的类型是void *，所以在调用malloc 时要显式地进行类型转换，将void * 转换成所需要的指针类型。</li>
+<li>malloc 函数本身并不识别要申请的内存是什么类型，它只关心内存的总字节数。</li>
+</ol>
+
+<p>函数free 的原型如下：</p>
+
+<pre><code>   void free( void * memblock );
+</code></pre>
+
+<p><strong>为什么free 函数不象malloc 函数那样复杂呢？</strong></p>
+
+<p>这是因为指针p 的类型以及它所指的内存的容量事先都是知道的，语句free(p)能正确地释放内存。如果p 是NULL 指针，那么free对p 无论操作多少次都不会出问题。如果p 不是NULL 指针，那么free 对p连续操作两次就会导致程序运行错误。</p>
+</blockquote>
+
+<h2>new/delete 的使用要点：</h2>
+
+<p><strong>运算符new 使用起来要比函数malloc 简单得多：</strong></p>
+
+<pre><code>   int *p1 = (int *)malloc(sizeof(int) * length);
+   int *p2 = new int[length];
+</code></pre>
+
+<blockquote>
+<p>这是因为new 内置了sizeof、类型转换和类型安全检查功能。对于非内部数据类型的对象而言，new 在创建动态对象的同时完成了初始化工作。如果对象有多个构造函数，那么new 的语句也可以有多种形式。</p>
+</blockquote>
+
+<p>如果用new 创建对象数组，那么只能使用对象的无参数构造函数。例如</p>
+
+<pre><code>    Obj *objects = new Obj[100];       // 创建100 个动态对象
+</code></pre>
+
+<p>不能写成</p>
+
+<pre><code>    Obj *objects = new Obj[100](1);        // 创建100 个动态对象的同时赋初值1
+</code></pre>
+
+<p>在用delete 释放对象数组时，留意不要丢了符号‘[]’。例如</p>
+
+<pre><code>    delete []objects; // 正确的用法
+    delete objects; // 错误的用法
+</code></pre>
+
+<p>后者相当于delete objects[0]，漏掉了另外99 个对象。</p>
+
+<hr>
+
+<ol>
+<li>new自动计算需要分配的空间，而malloc需要手工计算字节数</li>
+<li><p>new是类型安全的，而malloc不是，比如：</p>
+
+<pre><code>  int* p = new float[2]; // 编译时指出错误
+  int* p = malloc(2*sizeof(float)); // 编译时无法指出错误
+</code></pre>
+
+<p>new operator 由两步构成，分别是 <strong>operator new</strong> 和 <strong>construct</strong></p></li>
+<li><p>operator new对应于malloc，但operator new可以重载，可以自定义内存分配策略，甚至不做内存分配，甚至分配到非内存设备上。而malloc无能为力</p></li>
+<li><p>new将调用constructor，而malloc不能；delete将调用destructor，而free不能。</p></li>
+<li><p>malloc/free要库文件支持，new/delete则不要。 </p></li>
+</ol>
+
+<hr>
+
+<ol>
+<li><p>本质区别</p>
+
+<blockquote>
+<p>malloc/free是C/C++语言的标准库函数，new/delete是C++的运算符。对于用户自定义的对象而言，用maloc/free无法满足动态管理对象的要求。对象在创建的同时要自动执行构造函数，对象在消亡之前要自动执行析构函数。由于malloc/free是库函数而不是运算符，不在编译器控制权限之内，不能够把执行构造函数和析构函数的任务强加于malloc/free。因此C++需要一个能完成动态内存分配和初始化工作的运算符new，以及一个能完成清理与释放内存工作的运算符delete。</p>
+</blockquote></li>
+<li><p>联系</p>
+
+<blockquote>
+<p>既然new/delete的功能完全覆盖了malloc/free，为什么C++还保留malloc/free呢？因为C++程序经常要调用C函数，而C程序只能用malloc/free管理动态内存。如果用free释放“new创建的动态对象”，那么该对象因无法执行析构函数而可能导致程序出错。如果用delete释放“malloc申请的动态内存”，理论上讲程序不会出错，但是该程序的可读性很差。所以new/delete、malloc/free必须配对使用。</p>
+</blockquote></li>
+</ol>
+
+<hr>
+
+<h2>实例代码</h2>
+
+<pre><code class="cpp"><span class="keyword">class</span> Obj
+{
+<span class="keyword">public</span>:
+    Obj( ) 
+    { <span class="built_in">cout</span>  &lt;&lt;  <span class="string">"Initialization"</span>  &lt;&lt;  endl; }
+    ~ Obj( )
+    { <span class="built_in">cout</span>  &lt;&lt;  <span class="string">"Destroy"</span> &lt;&lt;  endl; }
+    <span class="keyword">void</span> Initialize( )
+    { <span class="built_in">cout</span>  &lt;&lt;  <span class="string">"Initialization"</span>  &lt;&lt;  endl; }
+    <span class="keyword">void</span>  Destroy( )
+    { <span class="built_in">cout</span>  &lt;&lt;  <span class="string">"Destroy"</span>  &lt;&lt;  endl; }
+}obj;
+
+<span class="keyword">void</span>  UseMallocFree( )
+{
+    Obj   * a  =  (Obj  *) malloc( <span class="keyword">sizeof</span> ( obj ) );      <span class="comment">//  allocate memory </span>
+    a -&gt; Initialize();                                    <span class="comment">//  initialization</span>
+    <span class="comment">// ��</span>� 
+    a -&gt; Destroy();                                        // deconstruction 
+    free(a);                                               // release memory
+}
+
+<span class="keyword">void</span>  UseNewDelete( <span class="keyword">void</span> )
+{
+    Obj   * a  =   <span class="keyword">new</span>  Obj;                                           
+    // … 
+    delete a; 
+}
+</code></pre>
+
+<blockquote>
+<p>类Obj的函数Initialize实现了构造函数的功能，函数Destroy实现了析构函数的功能。函数UseMallocFree中，由于malloc/free不能执行构造函数与析构函数，必须调用成员函数Initialize和Destroy来完成“构造”与“析构”。所以我们不要用malloc/free来完成动态对象的内存管理，应该用new/delete。由于内部数据类型的“对象”没有构造与析构的过程，对它们而言malloc/free和new/delete是等价的。</p>
+</blockquote>
+
+</body>
+</html>
