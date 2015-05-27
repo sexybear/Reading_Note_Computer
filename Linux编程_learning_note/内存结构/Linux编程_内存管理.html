@@ -1,0 +1,185 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+   <meta http-equiv="content-type" content="text/html;charset=UTF-8">
+   <style type="text/css">
+   /*CSS stylesheet is based on killwing's flavored markdown style:https://gist.github.com/2937864*/body{    margin: 0 auto;    font: 13px/1.231 Helvetica, Arial, sans-serif;    color: #444444;    line-height: 1;    max-width: 960px;    padding: 5px;}h1, h2, h3, h4 {    color: #111111;    font-weight: 400;}h1, h2, h3, h4, h5, p {    margin-bottom: 16px;    padding: 0;}h1 {    font-size: 28px;}h2 {    font-size: 22px;    margin: 20px 0 6px;}h3 {    font-size: 21px;}h4 {    font-size: 18px;}h5 {    font-size: 16px;}a {    color: #0099ff;    margin: 0;    padding: 0;    vertical-align: baseline;}a:link,a:visited{ text-decoration:none;}a:hover{ text-decoration:underline;}ul, ol {    padding: 0;    margin: 0;}li {    line-height: 24px;    margin-left: 44px;}li ul, li ul {    margin-left: 24px;}ul, ol {    font-size: 14px;    line-height: 20px;    max-width: 540px;}p {    font-size: 14px;    line-height: 20px;    max-width: 540px;    margin-top: 3px;}pre {    padding: 0px 4px;    max-width: 800px;    white-space: pre-wrap;    font-family: Consolas, Monaco, Andale Mono, monospace;    line-height: 1.5;    font-size: 13px;    border: 1px solid #ddd;    background-color: #f7f7f7;    border-radius: 3px;}code {    font-family: Consolas, Monaco, Andale Mono, monospace;    line-height: 1.5;    font-size: 13px;    border: 1px solid #ddd;    background-color: #f7f7f7;    border-radius: 3px;}pre code {    border: 0px;}aside {    display: block;    float: right;    width: 390px;}blockquote {    border-left:.5em solid #40AA53;    padding: 0 2em;    margin-left:0;    max-width: 476px;}blockquote  cite {    font-size:14px;    line-height:20px;    color:#bfbfbf;}blockquote cite:before {    content: '\2014 \00A0';}blockquote p {      color: #666;    max-width: 460px;}hr {    height: 1px;    border: none;    border-top: 1px dashed #0066CC}button,input,select,textarea {  font-size: 100%;  margin: 0;  vertical-align: baseline;  *vertical-align: middle;}button, input {  line-height: normal;  *overflow: visible;}button::-moz-focus-inner, input::-moz-focus-inner {  border: 0;  padding: 0;}button,input[type="button"],input[type="reset"],input[type="submit"] {  cursor: pointer;  -webkit-appearance: button;}input[type=checkbox], input[type=radio] {  cursor: pointer;}/* override default chrome & firefox settings */input:not([type="image"]), textarea {  -webkit-box-sizing: content-box;  -moz-box-sizing: content-box;  box-sizing: content-box;}input[type="search"] {  -webkit-appearance: textfield;  -webkit-box-sizing: content-box;  -moz-box-sizing: content-box;  box-sizing: content-box;}input[type="search"]::-webkit-search-decoration {  -webkit-appearance: none;}label,input,select,textarea {  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;  font-size: 13px;  font-weight: normal;  line-height: normal;  margin-bottom: 18px;}input[type=checkbox], input[type=radio] {  cursor: pointer;  margin-bottom: 0;}input[type=text],input[type=password],textarea,select {  display: inline-block;  width: 210px;  padding: 4px;  font-size: 13px;  font-weight: normal;  line-height: 18px;  height: 18px;  color: #808080;  border: 1px solid #ccc;  -webkit-border-radius: 3px;  -moz-border-radius: 3px;  border-radius: 3px;}select, input[type=file] {  height: 27px;  line-height: 27px;}textarea {  height: auto;}/* grey out placeholders */:-moz-placeholder {  color: #bfbfbf;}::-webkit-input-placeholder {  color: #bfbfbf;}input[type=text],input[type=password],select,textarea {  -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;  -moz-transition: border linear 0.2s, box-shadow linear 0.2s;  transition: border linear 0.2s, box-shadow linear 0.2s;  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);}input[type=text]:focus, input[type=password]:focus, textarea:focus {  outline: none;  border-color: rgba(82, 168, 236, 0.8);  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);}/* buttons */button {  display: inline-block;  padding: 4px 14px;  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;  font-size: 13px;  line-height: 18px;  -webkit-border-radius: 4px;  -moz-border-radius: 4px;  border-radius: 4px;  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);  background-color: #0064cd;  background-repeat: repeat-x;  background-image: -khtml-gradient(linear, left top, left bottom, from(#049cdb), to(#0064cd));  background-image: -moz-linear-gradient(top, #049cdb, #0064cd);  background-image: -ms-linear-gradient(top, #049cdb, #0064cd);  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #049cdb), color-stop(100%, #0064cd));  background-image: -webkit-linear-gradient(top, #049cdb, #0064cd);  background-image: -o-linear-gradient(top, #049cdb, #0064cd);  background-image: linear-gradient(top, #049cdb, #0064cd);  color: #fff;  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);  border: 1px solid #004b9a;  border-bottom-color: #003f81;  -webkit-transition: 0.1s linear all;  -moz-transition: 0.1s linear all;  transition: 0.1s linear all;  border-color: #0064cd #0064cd #003f81;  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);}button:hover {  color: #fff;  background-position: 0 -15px;  text-decoration: none;}button:active {  -webkit-box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);  -moz-box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);  box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);}button::-moz-focus-inner {  padding: 0;  border: 0;}/* table  */table {    border-spacing: 0;    border: 1px solid #ccc;}td, th{    border: 1px solid #ccc;    padding: 5px;}/* code syntax highlight.Documentation: http://www.mdcharm.com/documentation/code_syntax_highlighting.html#custom_your_own */pre .literal,pre .comment,pre .template_comment,pre .diff .header,pre .javadoc {    color: #008000;}pre .keyword,pre .css .rule .keyword,pre .winutils,pre .javascript .title,pre .nginx .title,pre .subst,pre .request,pre .status {    color: #0000FF;    font-weight: bold}pre .number,pre .hexcolor,pre .python .decorator,pre .ruby .constant {    color: #0000FF;}pre .string,pre .tag .value,pre .phpdoc,pre .tex .formula {    color: #D14}pre .title,pre .id {    color: #900;    font-weight: bold}pre .javascript .title,pre .lisp .title,pre .clojure .title,pre .subst {    font-weight: normal}pre .class .title,pre .haskell .type,pre .vhdl .literal,pre .tex .command {    color: #458;    font-weight: bold}pre .tag,pre .tag .title,pre .rules .property,pre .django .tag .keyword {    color: #000080;    font-weight: normal}pre .attribute,pre .variable,pre .lisp .body {    color: #008080}pre .regexp {    color: #009926}pre .class {    color: #458;    font-weight: bold}pre .symbol,pre .ruby .symbol .string,pre .lisp .keyword,pre .tex .special,pre .prompt {    color: #990073}pre .built_in,pre .lisp .title,pre .clojure .built_in {    color: #0086b3}pre .preprocessor,pre .pi,pre .doctype,pre .shebang,pre .cdata {    color: #999;    font-weight: bold}pre .deletion {    background: #fdd}pre .addition {    background: #dfd}pre .diff .change {    background: #0086b3}pre .chunk {    color: #aaa}pre .markdown .header {    color: #800;    font-weight: bold;}pre .markdown .blockquote {    color: #888;}pre .markdown .link_label {    color: #88F;}pre .markdown .strong {    font-weight: bold;}pre .markdown .emphasis {    font-style: italic;}
+   </style>
+   
+   
+</head>
+<body>
+    <h1>Linux编程笔记</h1>
+
+<p><strong>任何一个操作系统必须要关注的几个点</strong></p>
+
+<ul>
+<li>设备驱动</li>
+<li>进程管理</li>
+<li>内存管理</li>
+<li>文件目录系统管理</li>
+<li>IO</li>
+</ul>
+
+<p>分布式与中间件（tuxedo/corba/mq）</p>
+
+<h2>内存管理</h2>
+
+<ul>
+<li><p>硬件层次</p>
+
+<blockquote>
+<p>内存结构管理</p>
+</blockquote></li>
+<li><p>内核层次</p>
+
+<blockquote>
+<p>内存映射
+堆扩展</p>
+</blockquote></li>
+<li><p>数据结构层次 </p>
+
+<blockquote>
+<p>STL 智能指针</p>
+</blockquote></li>
+<li><p>语言层次 </p>
+
+<blockquote>
+<p>C：malloc C++:new</p>
+</blockquote></li>
+</ul>
+
+<h3>linux对内存的结构描述</h3>
+
+<blockquote>
+<p>/proc/&amp;{pid}/ 存放进程运行时的所有信息。</p>
+</blockquote>
+
+<p><strong><em>linux中4k的空间为一页</em></strong></p>
+
+<p>任何一个程序的内存空间分成4个基本部分：</p>
+
+<ol>
+<li>代码区</li>
+<li>全局栈区</li>
+<li>堆</li>
+<li>局部栈</li>
+</ol>
+
+<p><strong>进程查看： ps a/u/e</strong></p>
+
+<blockquote>
+<p>每一个程序都有一个自加载器，叫/lib/ld_linux.so.2,是一个标准的执行程序，负责把执行程序拷贝到代码空间，并且负责把指针指向main()</p>
+</blockquote>
+
+<pre><code class="c"><span class="preprocessor">#include &lt;stdio.h&gt;</span>
+<span class="preprocessor">#include &lt;stdlib.h&gt;</span>
+<span class="keyword">int</span> add(<span class="keyword">int</span> a,<span class="keyword">int</span> b)
+{
+    <span class="keyword">return</span> a+b;
+}
+
+<span class="keyword">int</span> a1 = <span class="number">1</span>;
+<span class="keyword">static</span> <span class="keyword">int</span> a2 = <span class="number">2</span>;
+<span class="keyword">const</span> <span class="keyword">int</span> a3 = <span class="number">3</span>;
+main()
+{
+    <span class="keyword">int</span> b1 = <span class="number">4</span>;
+    <span class="keyword">static</span> b2 = <span class="number">5</span>;
+    <span class="keyword">const</span> b3 = <span class="number">6</span>;
+
+    <span class="keyword">int</span> *p1 = malloc(<span class="number">4</span>);
+
+    printf(<span class="string">"a1:%p\n"</span>,&amp;a1);
+    printf(<span class="string">"a2:%p\n"</span>,&amp;a2);
+    printf(<span class="string">"a3:%p\n"</span>,&amp;a3);
+    printf(<span class="string">"b1:%p\n"</span>,&amp;b1);
+    printf(<span class="string">"b2:%p\n"</span>,&amp;b2);
+    printf(<span class="string">"b3:%p\n"</span>,&amp;b3);
+    printf(<span class="string">"p1:%p\n"</span>,p1);
+    printf(<span class="string">"main:%p\n"</span>,&amp;main);
+    printf(<span class="string">"add:%p\n"</span>,&amp;add);
+
+
+}
+</code></pre>
+
+<p>linux中代码的首地址是固定的。全局常量放在代码区，局部常量放在局部栈区。main在代码区，add在代码区。a1,a2在全局区。p1在堆里。</p>
+
+<p><strong>malloc的工作原理：</strong></p>
+
+<blockquote>
+<p>malloc使用一个数据结构（链表）来维护分配空间联保的构成：分配的空间，上一个空间数据，下一个空间数据，空间大小。对malloc分配的空间不要越界访问，会导致后台维护的结构，使得mallooc,free,realloc,calloc不能正常工作。</p>
+</blockquote>
+
+<p><strong>C++的new和malloc的关系</strong></p>
+
+<table><thead>
+<tr>
+<th align="left">malloc</th>
+<th align="right">new\new[]</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left">realloc</td>
+<td align="right">new()(定位分配)</td>
+</tr>
+<tr>
+<td align="left">calloc</td>
+<td align="right">new[]</td>
+</tr>
+<tr>
+<td align="left">free</td>
+<td align="right">delete</td>
+</tr>
+</tbody></table>
+
+<pre><code class="cpp"><span class="preprocessor">#include &lt;stdio.h&gt;</span>
+<span class="preprocessor">#include &lt;stdlib.h&gt;</span>
+<span class="preprocessor">#include &lt;unistd.h&gt;</span>
+
+<span class="keyword">int</span> main()
+{
+    <span class="keyword">int</span> *p1 = (<span class="keyword">int</span> *)malloc(<span class="number">4</span>);
+    <span class="keyword">int</span> *p2 = <span class="keyword">new</span> <span class="keyword">int</span>;
+    <span class="keyword">int</span> *p3 = (<span class="keyword">int</span> *)malloc(<span class="number">4</span>)l
+    <span class="keyword">int</span> *p4 = <span class="keyword">new</span> <span class="keyword">int</span>;
+    <span class="keyword">int</span> *p5 = <span class="keyword">new</span> <span class="keyword">int</span>;
+    <span class="keyword">int</span> *p6 = <span class="keyword">new</span> <span class="keyword">int</span>;
+
+    printf(<span class="string">"%p\n"</span>,p1);
+    printf(<span class="string">"%p\n"</span>,p2);
+    printf(<span class="string">"%p\n"</span>,p3);
+    printf(<span class="string">"%p\n"</span>,p4);
+    printf(<span class="string">"%p\n"</span>,p5);
+    printf(<span class="string">"%p\n"</span>,p6);
+
+    <span class="keyword">return</span> <span class="number">0</span>;
+}
+</code></pre>
+
+<blockquote>
+<p>new的实现使用的是malloc，但是有个区别：new使用malloc以后还要初始化空间，如果是基本类型，就直接初始化成默认值，UDT类型（用户自定义类型）调用指定的构造器。</p>
+
+<p>delete调用free实现，free直接释放，delete负责调用析构器，然后再调用free。</p>
+
+<p><strong>new与new[]的区别：</strong>new调用一个构造器初始化，new[]循环对每个区域调用构造器。</p>
+
+<p><strong>delete与delete[]的区别：</strong>delete只会调用首地址的析构器，而delete[]会依次调用序列中每个对象的析构器。</p>
+
+<p>定位分配</p>
+
+<pre><code>   #include &lt;stdio.h&gt;
+   #include &lt;stdlib.h&gt;
+   #include &lt;unistd.h&gt;
+   int main()
+   {
+       char a[20];
+       int *p = new(a) int;
+       return 0;
+   }
+</code></pre>
+</blockquote>
+
+</body>
+</html>
