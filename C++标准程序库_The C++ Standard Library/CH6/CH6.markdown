@@ -177,7 +177,7 @@ set和multiset通常以平衡二叉树完成。
 
 自动排序的优点在于使二叉树于搜寻元素时具有良好性能，其搜寻函数算法具有对数复杂度。
 
-自动排序造成set和multiset的一个限制：不能直接改变元素值，因为这样会打乱原本正确的顺序，因此要改变元素值，必须先删除旧元素，再插入新元素。
+>自动排序造成set和multiset的一个限制：不能直接改变元素值，因为这样会打乱原本正确的顺序，因此要改变元素值，必须先删除旧元素，再插入新元素。
 
 set提供的接口也反映了这种行为：
 + set和multiset不提供用来直接存取元素的任何操作函数。
@@ -203,6 +203,50 @@ set提供的接口也反映了这种行为：
 
 ###特殊的搜寻函数
 采用set自带的搜寻函数，会获得对数复杂度，而非STL算法的线性复杂度。
+
+
+###迭代器相关函数
+set和multiset不提供元素直接存取，所以只能采用迭代器。
+
+>set和multiset不能用只能用于随机存取迭代器的STL算法。也也不能对set和multiset元素调用任何变动性算法。如果要移除set和multiset的元素，你只能使用它们所提供的成员函数。
+
+>STL惯例，你必须保证参数有效，迭代器必须指向有效位置，序列起点不能位于终点之后，不能从空容器中删除元素。
+
+**安插和移除多个元素时，**单一调用比多次调用快得多。
+
+set和multiset安插函数的返回值不相同：
++ set提供以下接口：
+
+        pair<iterator,bool> insert{const value_type& elem};
+        iterator insert{iterator pos_hint,const value_type& elem};
++ multiset提供以下接口：
+        
+        iterator insert{const value_type& elem};
+        iterator insert{iterator pos_hint,const value_type& elem};
+        
+**返回值不同的原因是**
+
+>multiset允许元素重复，而set不允许，因此如果将某元素安插至一个set内，而该set内含同值元素，则安插操作将告失败，所以set的返回值型别是以pair组织起来的两个值。
+
+1. pair结构的second成员表示安插是否成功。
+2. pair结构的first成员返回新元素的位置，或
+返回现存的同值元素的位置。
+
+其他任何情况下，函数都返回新元素的位置。
+
+**作用于序列式容器和关联式容器的erase()函数的返回值不同的原因是**
+
+1. 序列式容器提供下面的erase()成员函数：
+
+        iterator erase(iterator pos);
+        iterator erase(iterator neg,iterator end);
+        
+>存在这种差别，完全是为了性能，在关联式容器中搜寻某些元素并返回后继元素可能颇为耗时，因为这种容器的底部是以二叉树完成，所以如果想要编写对所有容器都使用的程序代码，必须忽略返回值。
+
+   
+
+
+
 
 
 

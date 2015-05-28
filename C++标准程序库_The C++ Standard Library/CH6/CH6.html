@@ -272,6 +272,134 @@
 <td align="right">不抛出异常</td>
 </tr>
 </tbody></table>
+
+<h2>Sets Multisets</h2>
+
+<p>set和multiset会根据特定的排序准则，自动将元素排序，两者不同之处在于multiset允许重复而set不允许。</p>
+
+<pre><code>    namespace std{
+        template &lt;class T,class Compare = less&lt;T&gt;,class Allocator = allocator&lt;T&gt; &gt;
+        class set;
+        template &lt;class T,class Compare = less&lt;T&gt;,class Allocator = allocator&lt;T&gt; &gt;
+        class multiset;
+    }
+</code></pre>
+
+<p>可有可无的第二个template参数用来定义排序准则。缺省的准则是less，这是一个仿函数。</p>
+
+<p>所谓的排序准则，必须定义strict weak ordering,其意义如下：</p>
+
+<ul>
+<li>必须是反对称的</li>
+<li>必须是可传递的</li>
+<li>必须是非自反的</li>
+</ul>
+
+<p>排序准则也可用于相等性检验，如果两个元素都不小于对方，则两个元素为假。</p>
+
+<p>set和multiset通常以平衡二叉树完成。</p>
+
+<p><strong>自动排序的优点与限制</strong></p>
+
+<p>自动排序的优点在于使二叉树于搜寻元素时具有良好性能，其搜寻函数算法具有对数复杂度。</p>
+
+<blockquote>
+<p>自动排序造成set和multiset的一个限制：不能直接改变元素值，因为这样会打乱原本正确的顺序，因此要改变元素值，必须先删除旧元素，再插入新元素。</p>
+</blockquote>
+
+<p>set提供的接口也反映了这种行为：</p>
+
+<ul>
+<li>set和multiset不提供用来直接存取元素的任何操作函数。</li>
+<li>通过迭代器进行元素间接存取，有一个限制：从迭代器的角度来看，元素值是常数。</li>
+</ul>
+
+<p><strong>有两种方式能够定义排序规则</strong></p>
+
+<ol>
+<li><p>以template参数定义</p>
+
+<blockquote>
+<p>这种情况下，排序准则就是型别的一部分，因此型别系统确保只有排序准则相同的容器才能被合并。</p>
+</blockquote></li>
+<li><p>以构造函数参数定义</p>
+
+<blockquote>
+<p>这种情况下，同一个型别可以运用不同的排序准则，而排序准则的初始值或者状态也可以不同，如果执行期才获得排序准则，而且需要用到不同的排序准则，可以用这种方式解决。</p>
+</blockquote></li>
+</ol>
+
+<p>排序准则也可以用于元素相等性检验工作，当采用缺省排序准则时，两个元素的相等性检验语句如下：</p>
+
+<pre><code>    if(!(elem1&lt;elem2||elem2&lt;elem1))
+</code></pre>
+
+<p>这样做有三点好处：</p>
+
+<ul>
+<li>只需传递一个参数作为排序准则</li>
+<li>不必针对元素型别提供operator==</li>
+<li>可以对相等性有截然相反的定义</li>
+</ul>
+
+<h3>特殊的搜寻函数</h3>
+
+<p>采用set自带的搜寻函数，会获得对数复杂度，而非STL算法的线性复杂度。</p>
+
+<h3>迭代器相关函数</h3>
+
+<p>set和multiset不提供元素直接存取，所以只能采用迭代器。</p>
+
+<blockquote>
+<p>set和multiset不能用只能用于随机存取迭代器的STL算法。也也不能对set和multiset元素调用任何变动性算法。如果要移除set和multiset的元素，你只能使用它们所提供的成员函数。</p>
+
+<p>STL惯例，你必须保证参数有效，迭代器必须指向有效位置，序列起点不能位于终点之后，不能从空容器中删除元素。</p>
+</blockquote>
+
+<p><strong>安插和移除多个元素时，</strong>单一调用比多次调用快得多。</p>
+
+<p>set和multiset安插函数的返回值不相同：</p>
+
+<ul>
+<li><p>set提供以下接口：</p>
+
+<pre><code>pair&lt;iterator,bool&gt; insert{const value_type&amp; elem};
+iterator insert{iterator pos_hint,const value_type&amp; elem};
+</code></pre></li>
+<li><p>multiset提供以下接口：</p>
+
+<pre><code>iterator insert{const value_type&amp; elem};
+iterator insert{iterator pos_hint,const value_type&amp; elem};
+</code></pre></li>
+</ul>
+
+<p><strong>返回值不同的原因是</strong></p>
+
+<blockquote>
+<p>multiset允许元素重复，而set不允许，因此如果将某元素安插至一个set内，而该set内含同值元素，则安插操作将告失败，所以set的返回值型别是以pair组织起来的两个值。</p>
+</blockquote>
+
+<ol>
+<li>pair结构的second成员表示安插是否成功。</li>
+<li>pair结构的first成员返回新元素的位置，或
+返回现存的同值元素的位置。</li>
+</ol>
+
+<p>其他任何情况下，函数都返回新元素的位置。</p>
+
+<p><strong>作用于序列式容器和关联式容器的erase()函数的返回值不同的原因是</strong></p>
+
+<ol>
+<li><p>序列式容器提供下面的erase()成员函数：</p>
+
+<pre><code>iterator erase(iterator pos);
+iterator erase(iterator neg,iterator end);
+</code></pre></li>
+</ol>
+
+<blockquote>
+<p>存在这种差别，完全是为了性能，在关联式容器中搜寻某些元素并返回后继元素可能颇为耗时，因为这种容器的底部是以二叉树完成，所以如果想要编写对所有容器都使用的程序代码，必须忽略返回值。</p>
+</blockquote>
 
 </body>
 </html>
