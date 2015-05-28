@@ -241,7 +241,13 @@ set和multiset安插函数的返回值不相同：
         iterator erase(iterator pos);
         iterator erase(iterator neg,iterator end);
         
+2. 关联式容器提供下面的erase()成员函数：
+
+        void erase(iterator pos);
+        void erase(iterator beg)
 >存在这种差别，完全是为了性能，在关联式容器中搜寻某些元素并返回后继元素可能颇为耗时，因为这种容器的底部是以二叉树完成，所以如果想要编写对所有容器都使用的程序代码，必须忽略返回值。
+
+###异常处理
 
    
 
