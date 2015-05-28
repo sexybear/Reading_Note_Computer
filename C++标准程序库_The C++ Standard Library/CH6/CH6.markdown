@@ -250,6 +250,25 @@ set和multiset安插函数的返回值不相同：
 ###异常处理
 面对多重元素安插操作，保持元素次序会这一条件会造成异常抛出时能够完全复原这一需求就变得不切实际，因此只有单一元素安插操作才支持“成功，否则无效”的操作原则。
 
+##map multimap
+map和multimap将key/value pair当作元素，进行管理。他们根据key的排序准则自动将元素排序。
+
+        namespace std{
+            template <class key,class T,
+                      class Compare = less<key>,
+                      class Allocator = allocator<pair<const key,T> > >
+            class map;
+            template <class key,class T,
+                      class Compare = less<key>,
+                      class Allocator = allocator<pair<const,key> > >
+            class multimap;
+            }
+
+**map的key,T必须满足以下两个条件：**
++ key/value必须具备assignable 和 copyable性质。
++ 对排序准则而言，key必须是comparable。
+
+
 
    
 

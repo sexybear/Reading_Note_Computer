@@ -395,11 +395,43 @@ iterator insert{iterator pos_hint,const value_type&amp; elem};
 <pre><code>iterator erase(iterator pos);
 iterator erase(iterator neg,iterator end);
 </code></pre></li>
-</ol>
+<li><p>关联式容器提供下面的erase()成员函数：</p>
+
+<pre><code>void erase(iterator pos);
+void erase(iterator beg)
+</code></pre>
 
 <blockquote>
 <p>存在这种差别，完全是为了性能，在关联式容器中搜寻某些元素并返回后继元素可能颇为耗时，因为这种容器的底部是以二叉树完成，所以如果想要编写对所有容器都使用的程序代码，必须忽略返回值。</p>
-</blockquote>
+</blockquote></li>
+</ol>
+
+<h3>异常处理</h3>
+
+<p>面对多重元素安插操作，保持元素次序会这一条件会造成异常抛出时能够完全复原这一需求就变得不切实际，因此只有单一元素安插操作才支持“成功，否则无效”的操作原则。</p>
+
+<h2>map multimap</h2>
+
+<p>map和multimap将key/value pair当作元素，进行管理。他们根据key的排序准则自动将元素排序。</p>
+
+<pre><code>    namespace std{
+        template &lt;class key,class T,
+                  class Compare = less&lt;key&gt;,
+                  class Allocator = allocator&lt;pair&lt;const key,T&gt; &gt; &gt;
+        class map;
+        template &lt;class key,class T,
+                  class Compare = less&lt;key&gt;,
+                  class Allocator = allocator&lt;pair&lt;const,key&gt; &gt; &gt;
+        class multimap;
+        }
+</code></pre>
+
+<p><strong>map的key,T必须满足以下两个条件：</strong></p>
+
+<ul>
+<li>key/value必须具备assignable 和 copyable性质。</li>
+<li>对排序准则而言，key必须是comparable。</li>
+</ul>
 
 </body>
 </html>
