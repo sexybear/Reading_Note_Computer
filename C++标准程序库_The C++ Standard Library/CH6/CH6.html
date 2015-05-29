@@ -479,6 +479,59 @@ void erase(iterator beg)
          }
     }
 </code></pre>
+
+<p><strong>map有一种比较方便的方法改变元素的key</strong></p>
+
+<pre><code>    coll[&#39;new_key&#39;] = coll[&#39;old_key&#39;];
+    coll.remove(&#39;old_key&#39;);
+</code></pre>
+
+<p>安插一个key/value pair的时候，要记住，在map和multimap内部，key被视为常数，要不就提供正确型别，要不就提供隐式或显式型别转换，有三个方法可以将value传入map:</p>
+
+<ol>
+<li>运用value_type</li>
+<li>运用pair&lt;&gt;</li>
+<li>运用make_pair()</li>
+</ol>
+
+<h3>将maps视为关联式数组</h3>
+
+<p>关联式容器并不提供元素的直接存取，必须依靠迭代器，但是map是个例外，non-const map提供下标操作符，支持元素的直接存取。不过，下标操作符的索引值并非元素整数值，而是元素的key.也就是说，索引可以是任意型别，而非局限为整数型别。</p>
+
+<p><strong>关联式数组行为方式的优缺点</strong></p>
+
+<ul>
+<li>优点： 可以透过更方便的接口对着map安插新元素。</li>
+<li>缺点： 可能会不小心误置新元素。</li>
+</ul>
+
+<p><strong><em>map的异常处理与set的一样</em></strong></p>
+
+<h2>其他STL容器</h2>
+
+<p>STL是个框架，除了提供标准容器，它也允许你使用其他数据结构作为容器。这样的框架正是开放性封闭原则的范例：允许扩展，谢绝修改。</p>
+
+<p>使容器STL化的三种不同的方法：</p>
+
+<ol>
+<li><p>侵入性做法</p>
+
+<blockquote>
+<p>直接提供STL容器所需接口。</p>
+</blockquote></li>
+<li><p>非侵入性做法</p>
+
+<blockquote>
+<p>由你撰写或提供特殊迭代器，作为算法和特殊容器的界面。</p>
+</blockquote></li>
+<li><p>包装法</p>
+
+<blockquote>
+<p>将上述两种方法加以组合，可以写一个外套类别来包装任何数据结构，并显示出与STL容器相似的接口。</p>
+</blockquote></li>
+</ol>
+
+<p><strong>任何STL容器都应该能够以不同的配置器加以参数化。</strong></p>
 
 </body>
 </html>
