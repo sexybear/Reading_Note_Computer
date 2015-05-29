@@ -432,6 +432,53 @@ void erase(iterator beg)
 <li>key/value必须具备assignable 和 copyable性质。</li>
 <li>对排序准则而言，key必须是comparable。</li>
 </ul>
+
+<p><strong>自动排序使得map和multimap身上有了一条重要的限制：</strong></p>
+
+<p>你不可以直接改变元素的key，因为这会破坏正确次序，要修改元素的map，你必须先移除拥有该key的元素，然后插入拥有新的key/value的元素。</p>
+
+<p><strong>定义排序准则的两种方式</strong></p>
+
+<ul>
+<li><p>以template参数定义</p>
+
+<pre><code>map&lt;float,string,greater&lt;float&gt; &gt; coll;
+</code></pre></li>
+<li><p>以构造函数参数定义</p></li>
+</ul>
+
+<blockquote>
+<p>如果使用者没有提供特定排序准则，就采用缺省准则----仿函数less&lt;&gt;。less&lt;&gt;系透过operator&lt;对元素进行排序。</p>
+</blockquote>
+
+<h3>非变动性操作</h3>
+
+<p>元素比较动作只能用于型别相同的容器，比较动作系以字典顺序来检查某个容器是否小于另一个容器。如果比较不同型别的容器，必须采用algorithm的比较算法。</p>
+
+<p>map和multimap不支持元素直接存取，因此元素的存取通常是经由迭代器进行。不过有个例外，map提供下标操作符，可以直接存取元素。</p>
+
+<p><strong>一定得改变元素的key，只能以一个value相同的新元素替换掉旧元素</strong></p>
+
+<pre><code>    namespace Mylib{
+        template &lt;class Cont&gt;
+        inline
+        bool replace_key (Cont&amp; c,
+                          const typename Cont::key_type&amp; old_key,
+                          const typename Cont::key_type&amp; new_key)
+        {
+            typename Cont::iterator pos;
+            pos = c.find(old_key);
+            if(pos != c.end()){
+                c.insert(typename Cont::value_type(new_key,pos-&gt;second));
+                c.erase(pos);
+                return true;
+            }
+            else{
+                return false;
+                }
+         }
+    }
+</code></pre>
 
 </body>
 </html>
