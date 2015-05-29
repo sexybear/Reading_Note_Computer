@@ -1,537 +1,0 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-   <meta http-equiv="content-type" content="text/html;charset=UTF-8">
-   <style type="text/css">
-   /*CSS stylesheet is based on killwing's flavored markdown style:https://gist.github.com/2937864*/body{    margin: 0 auto;    font: 13px/1.231 Helvetica, Arial, sans-serif;    color: #444444;    line-height: 1;    max-width: 960px;    padding: 5px;}h1, h2, h3, h4 {    color: #111111;    font-weight: 400;}h1, h2, h3, h4, h5, p {    margin-bottom: 16px;    padding: 0;}h1 {    font-size: 28px;}h2 {    font-size: 22px;    margin: 20px 0 6px;}h3 {    font-size: 21px;}h4 {    font-size: 18px;}h5 {    font-size: 16px;}a {    color: #0099ff;    margin: 0;    padding: 0;    vertical-align: baseline;}a:link,a:visited{ text-decoration:none;}a:hover{ text-decoration:underline;}ul, ol {    padding: 0;    margin: 0;}li {    line-height: 24px;    margin-left: 44px;}li ul, li ul {    margin-left: 24px;}ul, ol {    font-size: 14px;    line-height: 20px;    max-width: 540px;}p {    font-size: 14px;    line-height: 20px;    max-width: 540px;    margin-top: 3px;}pre {    padding: 0px 4px;    max-width: 800px;    white-space: pre-wrap;    font-family: Consolas, Monaco, Andale Mono, monospace;    line-height: 1.5;    font-size: 13px;    border: 1px solid #ddd;    background-color: #f7f7f7;    border-radius: 3px;}code {    font-family: Consolas, Monaco, Andale Mono, monospace;    line-height: 1.5;    font-size: 13px;    border: 1px solid #ddd;    background-color: #f7f7f7;    border-radius: 3px;}pre code {    border: 0px;}aside {    display: block;    float: right;    width: 390px;}blockquote {    border-left:.5em solid #40AA53;    padding: 0 2em;    margin-left:0;    max-width: 476px;}blockquote  cite {    font-size:14px;    line-height:20px;    color:#bfbfbf;}blockquote cite:before {    content: '\2014 \00A0';}blockquote p {      color: #666;    max-width: 460px;}hr {    height: 1px;    border: none;    border-top: 1px dashed #0066CC}button,input,select,textarea {  font-size: 100%;  margin: 0;  vertical-align: baseline;  *vertical-align: middle;}button, input {  line-height: normal;  *overflow: visible;}button::-moz-focus-inner, input::-moz-focus-inner {  border: 0;  padding: 0;}button,input[type="button"],input[type="reset"],input[type="submit"] {  cursor: pointer;  -webkit-appearance: button;}input[type=checkbox], input[type=radio] {  cursor: pointer;}/* override default chrome & firefox settings */input:not([type="image"]), textarea {  -webkit-box-sizing: content-box;  -moz-box-sizing: content-box;  box-sizing: content-box;}input[type="search"] {  -webkit-appearance: textfield;  -webkit-box-sizing: content-box;  -moz-box-sizing: content-box;  box-sizing: content-box;}input[type="search"]::-webkit-search-decoration {  -webkit-appearance: none;}label,input,select,textarea {  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;  font-size: 13px;  font-weight: normal;  line-height: normal;  margin-bottom: 18px;}input[type=checkbox], input[type=radio] {  cursor: pointer;  margin-bottom: 0;}input[type=text],input[type=password],textarea,select {  display: inline-block;  width: 210px;  padding: 4px;  font-size: 13px;  font-weight: normal;  line-height: 18px;  height: 18px;  color: #808080;  border: 1px solid #ccc;  -webkit-border-radius: 3px;  -moz-border-radius: 3px;  border-radius: 3px;}select, input[type=file] {  height: 27px;  line-height: 27px;}textarea {  height: auto;}/* grey out placeholders */:-moz-placeholder {  color: #bfbfbf;}::-webkit-input-placeholder {  color: #bfbfbf;}input[type=text],input[type=password],select,textarea {  -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;  -moz-transition: border linear 0.2s, box-shadow linear 0.2s;  transition: border linear 0.2s, box-shadow linear 0.2s;  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);}input[type=text]:focus, input[type=password]:focus, textarea:focus {  outline: none;  border-color: rgba(82, 168, 236, 0.8);  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);}/* buttons */button {  display: inline-block;  padding: 4px 14px;  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;  font-size: 13px;  line-height: 18px;  -webkit-border-radius: 4px;  -moz-border-radius: 4px;  border-radius: 4px;  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);  background-color: #0064cd;  background-repeat: repeat-x;  background-image: -khtml-gradient(linear, left top, left bottom, from(#049cdb), to(#0064cd));  background-image: -moz-linear-gradient(top, #049cdb, #0064cd);  background-image: -ms-linear-gradient(top, #049cdb, #0064cd);  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #049cdb), color-stop(100%, #0064cd));  background-image: -webkit-linear-gradient(top, #049cdb, #0064cd);  background-image: -o-linear-gradient(top, #049cdb, #0064cd);  background-image: linear-gradient(top, #049cdb, #0064cd);  color: #fff;  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);  border: 1px solid #004b9a;  border-bottom-color: #003f81;  -webkit-transition: 0.1s linear all;  -moz-transition: 0.1s linear all;  transition: 0.1s linear all;  border-color: #0064cd #0064cd #003f81;  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);}button:hover {  color: #fff;  background-position: 0 -15px;  text-decoration: none;}button:active {  -webkit-box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);  -moz-box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);  box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);}button::-moz-focus-inner {  padding: 0;  border: 0;}/* table  */table {    border-spacing: 0;    border: 1px solid #ccc;}td, th{    border: 1px solid #ccc;    padding: 5px;}/* code syntax highlight.Documentation: http://www.mdcharm.com/documentation/code_syntax_highlighting.html#custom_your_own */pre .literal,pre .comment,pre .template_comment,pre .diff .header,pre .javadoc {    color: #008000;}pre .keyword,pre .css .rule .keyword,pre .winutils,pre .javascript .title,pre .nginx .title,pre .subst,pre .request,pre .status {    color: #0000FF;    font-weight: bold}pre .number,pre .hexcolor,pre .python .decorator,pre .ruby .constant {    color: #0000FF;}pre .string,pre .tag .value,pre .phpdoc,pre .tex .formula {    color: #D14}pre .title,pre .id {    color: #900;    font-weight: bold}pre .javascript .title,pre .lisp .title,pre .clojure .title,pre .subst {    font-weight: normal}pre .class .title,pre .haskell .type,pre .vhdl .literal,pre .tex .command {    color: #458;    font-weight: bold}pre .tag,pre .tag .title,pre .rules .property,pre .django .tag .keyword {    color: #000080;    font-weight: normal}pre .attribute,pre .variable,pre .lisp .body {    color: #008080}pre .regexp {    color: #009926}pre .class {    color: #458;    font-weight: bold}pre .symbol,pre .ruby .symbol .string,pre .lisp .keyword,pre .tex .special,pre .prompt {    color: #990073}pre .built_in,pre .lisp .title,pre .clojure .built_in {    color: #0086b3}pre .preprocessor,pre .pi,pre .doctype,pre .shebang,pre .cdata {    color: #999;    font-weight: bold}pre .deletion {    background: #fdd}pre .addition {    background: #dfd}pre .diff .change {    background: #0086b3}pre .chunk {    color: #aaa}pre .markdown .header {    color: #800;    font-weight: bold;}pre .markdown .blockquote {    color: #888;}pre .markdown .link_label {    color: #88F;}pre .markdown .strong {    font-weight: bold;}pre .markdown .emphasis {    font-style: italic;}
-   </style>
-   
-   
-</head>
-<body>
-    <h1>C++标准程序库读书笔记</h1>
-
-<h2>CH5 STL容器</h2>
-
-<p><strong>容器的共同能力</strong></p>
-
-<p>容器三个最核心的能力是：</p>
-
-<ol>
-<li>所有容器提供的都是value语意而非reference语意。</li>
-<li>总体而言，所有的元素形成一个次序。</li>
-<li>一般而言，各项操作并非绝对安全。</li>
-</ol>
-
-<hr>
-
-<p>所有容器都提供了三个和大小相关的操作函数：</p>
-
-<ol>
-<li>size()</li>
-<li>empty()</li>
-<li><p>max_size()</p>
-
-<blockquote>
-<p>返回容器所能容纳的最大元素数量。</p>
-</blockquote></li>
-</ol>
-
-<hr>
-
-<p>比较的定义依据以下三条规则：</p>
-
-<ol>
-<li>比较操作的两端（两个容器）必须属于同一型别。</li>
-<li>如果两个容器的所有元素依序相等，那么这两个容器相等。采用operator==检查元素是否相等。</li>
-<li>采用字典式顺序比较原则来判断某个容器是否小于另一个容器。</li>
-</ol>
-
-<hr>
-
-<p><strong><em>如果两个容器型别相同，而且拷贝后源容器不再被使用，那么可以使用一个简单的优化方法：swap()。</em></strong></p>
-
-<p>swap()的性能比较优异，因为它只交换容器的内部数据，事实上只交换某些内部指针，时间复杂度是常数，不像实际赋值操作的复杂度为线性。</p>
-
-<h3>vector</h3>
-
-<blockquote>
-<p>vector模塑出一个动态数组，因此，它本身是将元素置于动态数组中加以管理的一个抽象概念。</p>
-</blockquote>
-
-<pre><code>    namespace std{
-        template &lt;class T,class Allocator = allocator&lt;T&gt; &gt;
-        class vector;
-    }
-</code></pre>
-
-<blockquote>
-<p>vector的元素可以是任意型别T，但必须具备assignable和copyable两个性质，第二个template参数可有可无，用来定义内存模型，缺省的内存模型是C++标准程序库提供的allocator。</p>
-
-<p>vector的迭代器是随机存取迭代器，vector支持随机存取。vector是一种有序群集，元素之间总是村咋某种顺序。vector将其元素复制到内部的dynamic array中。</p>
-
-<p>在末端附加或删除元素时，vector的性能相当好，可是如果在前段或者中部安插或删除元素，<strong><em>性能就不好</em></strong>，因为操作点之后的每一个元素都必须移到另一个位置，而每一次移动都得调用assignment操作符。</p>
-
-<p><strong>vector优异性能的秘诀，</strong>就是配置比其所容纳的元素所需更多的内存。</p>
-</blockquote>
-
-<p><strong>vector容量重要的原因</strong></p>
-
-<ul>
-<li>一旦内存重新配置，和vector相关的所有reference，pointers，iterators都会失效。</li>
-<li>内存重新配置很耗时间。</li>
-</ul>
-
-<p><strong>避免vector重新分配内存的方法</strong></p>
-
-<ul>
-<li>使用reserve()保留适当容量。</li>
-<li>初始化期间就像构造函数传递附加参数，构造出足够的空间。</li>
-</ul>
-
-<blockquote>
-<p>关于性能，以下情况可以预期安插操作和移除操作会比较快些：</p>
-
-<ol>
-<li>在容器尾部安插或移除元素。</li>
-<li>容量一开始就够大。</li>
-<li>安插多个元素时，调用一次当然比调用多次来的快。</li>
-</ol>
-</blockquote>
-
-<p>安插元素和移除元素都会使作用点之后的各元素的reference，pointers，iterators失效。如果安插操作甚至引发内存重新分配，那么该容器身上的所有reference，pointers，iterators都会失效。</p>
-
-<p><strong><em>C++标准程序库并未明确要求vector的元素必须分布于连续空间中。</em></strong></p>
-
-<h3>vector的异常处理</h3>
-
-<p>对于vector调用的函数抛出异常，C++标准程序库做出如下保证：</p>
-
-<ul>
-<li>如果push_back()安插元素时发生异常，该函数不起作用。</li>
-<li>如果元素的拷贝操作不跑出异常，那么insert()要么成功，要么不生效用。</li>
-<li>pop_back()绝不会抛出任何异常。</li>
-<li>如果元素拷贝操作不抛出异常，erase()和clear()就不抛出异常。</li>
-<li>swap()不抛出异常。</li>
-<li>如果元素拷贝操作绝对不会抛出异常，那么所有操作不是成功，就是不起作用。</li>
-</ul>
-
-<h2>Deques</h2>
-
-<p>deque也采用动态数组来管理元素，提供随机存取。不同的是deque的动态数组头尾都开放，因此可以在头尾两端进行快速安插和删除。</p>
-
-<pre><code>    namespace std{
-        template&lt;class T,class Allocator = allocator&lt;T&gt; &gt;
-        class deque;
-    }
-</code></pre>
-
-<p><strong>与vector相比，deques功能上的不同处在于：</strong></p>
-
-<ul>
-<li>两端都能快速安插元素和移除元素。这些操作都可以分期摊还的常数时间内完成。</li>
-<li>存取元素时，deque的内部结构会多一个间接过程，所以元素的存取和迭代器的动作会稍稍慢一些。</li>
-<li>迭代器需要在不同区块间跳转，所以必须是特殊的智能指针。</li>
-<li>在对内存区块有所限制的系统中，deque可以内含更多元素，因为它是用不只一块内存，因此deque的max_size()可能更大。</li>
-<li>deque不支持对容量和内存重分配实际的控制，特别要注意的是，除了头尾两端，在任何地方安插和删除元素，都将导致指向deque元素的任何pointers。references，iterators失效。不过，deque的内存重分配优于vectors，因为其内部的结果显示，deque不必再内存重分配时复制所有元素。</li>
-<li>deque的内存区块不再被使用时，会被释放。deque的内存大小是可缩减的。</li>
-</ul>
-
-<p><strong>以下这几点与vector相似</strong></p>
-
-<ul>
-<li>在中间部分安插，移除元素的速度相对较慢，因为所有元素都需移动以腾出或填补空间。</li>
-<li>迭代器属于随机存取迭代器。</li>
-</ul>
-
-<p><strong>以下情形，最好选用deque</strong></p>
-
-<ul>
-<li>需要在两端安插和移除元素。</li>
-<li>无需引用容器内的元素。</li>
-<li>要求容器释放不再使用的元素。</li>
-</ul>
-
-<p><strong>deque的各项操作中有以下几点和vector不同：</strong></p>
-
-<ul>
-<li>deque不提供容量操作。</li>
-<li>deque直接提供函数，用以完成头部元素的安插和删除。</li>
-</ul>
-
-<p><strong>deque中需要注意的地方</strong></p>
-
-<ul>
-<li>除了at()，没有任何成员函数会检查索引或迭代器是否有效。</li>
-<li>元素的插入或删除可能导致内存重新分配，所以任何插入或者删除动作都会是所有指向deque元素的pointers，references和iterators失效。唯一的例外是在头部或者尾部插入元素，动作之后，pointers和references仍然有效，iterator依然会失效。</li>
-</ul>
-
-<h3>deque异常处理</h3>
-
-<p><strong>deque的异常处理</strong>
-与vector的一样。主要保证以下行为：</p>
-
-<ul>
-<li>如果以push_back()或push_back()安插元素时发生异常，则该操作不带来任何效应。</li>
-<li>pop_back()和pop_front()不会抛出任何异常。</li>
-</ul>
-
-<h2>Lists</h2>
-
-<p>list使用了一个双向链表来管理元素。</p>
-
-<pre><code>    namespace std{
-        template &lt;class T,class Allocator = allocator&lt;T&gt; &gt;
-        class list;
-    }
-</code></pre>
-
-<p><strong>list在以下几个方面与vector和deque存在明显区别</strong></p>
-
-<ul>
-<li>lists不支持随机存取。在list中随机遍历任意元素，是很缓慢的行为。</li>
-<li>任何位置上执行元素的安插和移除都非常快。始终都是在常数时间内完成，因为无需移动任何其他元素，实际上内部只是进行了指针操作而已。</li>
-<li>安插和删除动作并不会uzaocheng指向其他元素的各个pointers，references，iterators失效。</li>
-<li>lists对于异常有着这样的处理方式：要么操作成功，要么什么都不发生。</li>
-</ul>
-
-<p><strong>list所提供的成员函数反映出它和vector以及deque的不同</strong></p>
-
-<ul>
-<li>由于不支持随机存取，list既不提供下标操作符，也不提供at()</li>
-<li>list并未提供容量，空间重新分配等操作函数，因为全无必要，每个元素都有自己的内存，在被删除之前一直有效。</li>
-<li>list提供了不少特殊的成员函数，专门用于移动元素。</li>
-</ul>
-
-<p><strong>list的各种操作在异常发生时提供的特殊保证</strong></p>
-
-<table><thead>
-<tr>
-<th align="left">操作</th>
-<th align="right">保证</th>
-</tr>
-</thead><tbody>
-<tr>
-<td align="left">push_back()</td>
-<td align="right">如果不成功，就无任何作用</td>
-</tr>
-<tr>
-<td align="left">push_front()</td>
-<td align="right">如果不成功，就无任何作用</td>
-</tr>
-<tr>
-<td align="left">insert()</td>
-<td align="right">如果不成功，就无任何作用</td>
-</tr>
-<tr>
-<td align="left">pop_back()</td>
-<td align="right">不抛出异常</td>
-</tr>
-<tr>
-<td align="left">pop_front()</td>
-<td align="right">不抛出异常</td>
-</tr>
-<tr>
-<td align="left">erase()</td>
-<td align="right">不抛出异常</td>
-</tr>
-<tr>
-<td align="left">clear()</td>
-<td align="right">不抛出异常</td>
-</tr>
-<tr>
-<td align="left">resize()</td>
-<td align="right">如果不成功，就无任何作用</td>
-</tr>
-<tr>
-<td align="left">remove()</td>
-<td align="right">只要元素比较操作不抛出异常，它就不抛出异常</td>
-</tr>
-<tr>
-<td align="left">remove_if()</td>
-<td align="right">只要判断式不抛出异常，它就不抛出异常</td>
-</tr>
-<tr>
-<td align="left">unique()</td>
-<td align="right">只要元素比较操作不抛出异常，它就不抛出异常</td>
-</tr>
-<tr>
-<td align="left">splice()</td>
-<td align="right">不抛出异常</td>
-</tr>
-<tr>
-<td align="left">merge()</td>
-<td align="right">只要元素比较时不抛出异常，它便保证要么不成功，要么无任何作用</td>
-</tr>
-<tr>
-<td align="left">reverse()</td>
-<td align="right">不抛出异常</td>
-</tr>
-<tr>
-<td align="left">swap()</td>
-<td align="right">不抛出异常</td>
-</tr>
-</tbody></table>
-
-<h2>Sets Multisets</h2>
-
-<p>set和multiset会根据特定的排序准则，自动将元素排序，两者不同之处在于multiset允许重复而set不允许。</p>
-
-<pre><code>    namespace std{
-        template &lt;class T,class Compare = less&lt;T&gt;,class Allocator = allocator&lt;T&gt; &gt;
-        class set;
-        template &lt;class T,class Compare = less&lt;T&gt;,class Allocator = allocator&lt;T&gt; &gt;
-        class multiset;
-    }
-</code></pre>
-
-<p>可有可无的第二个template参数用来定义排序准则。缺省的准则是less，这是一个仿函数。</p>
-
-<p>所谓的排序准则，必须定义strict weak ordering,其意义如下：</p>
-
-<ul>
-<li>必须是反对称的</li>
-<li>必须是可传递的</li>
-<li>必须是非自反的</li>
-</ul>
-
-<p>排序准则也可用于相等性检验，如果两个元素都不小于对方，则两个元素为假。</p>
-
-<p>set和multiset通常以平衡二叉树完成。</p>
-
-<p><strong>自动排序的优点与限制</strong></p>
-
-<p>自动排序的优点在于使二叉树于搜寻元素时具有良好性能，其搜寻函数算法具有对数复杂度。</p>
-
-<blockquote>
-<p>自动排序造成set和multiset的一个限制：不能直接改变元素值，因为这样会打乱原本正确的顺序，因此要改变元素值，必须先删除旧元素，再插入新元素。</p>
-</blockquote>
-
-<p>set提供的接口也反映了这种行为：</p>
-
-<ul>
-<li>set和multiset不提供用来直接存取元素的任何操作函数。</li>
-<li>通过迭代器进行元素间接存取，有一个限制：从迭代器的角度来看，元素值是常数。</li>
-</ul>
-
-<p><strong>有两种方式能够定义排序规则</strong></p>
-
-<ol>
-<li><p>以template参数定义</p>
-
-<blockquote>
-<p>这种情况下，排序准则就是型别的一部分，因此型别系统确保只有排序准则相同的容器才能被合并。</p>
-</blockquote></li>
-<li><p>以构造函数参数定义</p>
-
-<blockquote>
-<p>这种情况下，同一个型别可以运用不同的排序准则，而排序准则的初始值或者状态也可以不同，如果执行期才获得排序准则，而且需要用到不同的排序准则，可以用这种方式解决。</p>
-</blockquote></li>
-</ol>
-
-<p>排序准则也可以用于元素相等性检验工作，当采用缺省排序准则时，两个元素的相等性检验语句如下：</p>
-
-<pre><code>    if(!(elem1&lt;elem2||elem2&lt;elem1))
-</code></pre>
-
-<p>这样做有三点好处：</p>
-
-<ul>
-<li>只需传递一个参数作为排序准则</li>
-<li>不必针对元素型别提供operator==</li>
-<li>可以对相等性有截然相反的定义</li>
-</ul>
-
-<h3>特殊的搜寻函数</h3>
-
-<p>采用set自带的搜寻函数，会获得对数复杂度，而非STL算法的线性复杂度。</p>
-
-<h3>迭代器相关函数</h3>
-
-<p>set和multiset不提供元素直接存取，所以只能采用迭代器。</p>
-
-<blockquote>
-<p>set和multiset不能用只能用于随机存取迭代器的STL算法。也也不能对set和multiset元素调用任何变动性算法。如果要移除set和multiset的元素，你只能使用它们所提供的成员函数。</p>
-
-<p>STL惯例，你必须保证参数有效，迭代器必须指向有效位置，序列起点不能位于终点之后，不能从空容器中删除元素。</p>
-</blockquote>
-
-<p><strong>安插和移除多个元素时，</strong>单一调用比多次调用快得多。</p>
-
-<p>set和multiset安插函数的返回值不相同：</p>
-
-<ul>
-<li><p>set提供以下接口：</p>
-
-<pre><code>pair&lt;iterator,bool&gt; insert{const value_type&amp; elem};
-iterator insert{iterator pos_hint,const value_type&amp; elem};
-</code></pre></li>
-<li><p>multiset提供以下接口：</p>
-
-<pre><code>iterator insert{const value_type&amp; elem};
-iterator insert{iterator pos_hint,const value_type&amp; elem};
-</code></pre></li>
-</ul>
-
-<p><strong>返回值不同的原因是</strong></p>
-
-<blockquote>
-<p>multiset允许元素重复，而set不允许，因此如果将某元素安插至一个set内，而该set内含同值元素，则安插操作将告失败，所以set的返回值型别是以pair组织起来的两个值。</p>
-</blockquote>
-
-<ol>
-<li>pair结构的second成员表示安插是否成功。</li>
-<li>pair结构的first成员返回新元素的位置，或
-返回现存的同值元素的位置。</li>
-</ol>
-
-<p>其他任何情况下，函数都返回新元素的位置。</p>
-
-<p><strong>作用于序列式容器和关联式容器的erase()函数的返回值不同的原因是</strong></p>
-
-<ol>
-<li><p>序列式容器提供下面的erase()成员函数：</p>
-
-<pre><code>iterator erase(iterator pos);
-iterator erase(iterator neg,iterator end);
-</code></pre></li>
-<li><p>关联式容器提供下面的erase()成员函数：</p>
-
-<pre><code>void erase(iterator pos);
-void erase(iterator beg)
-</code></pre>
-
-<blockquote>
-<p>存在这种差别，完全是为了性能，在关联式容器中搜寻某些元素并返回后继元素可能颇为耗时，因为这种容器的底部是以二叉树完成，所以如果想要编写对所有容器都使用的程序代码，必须忽略返回值。</p>
-</blockquote></li>
-</ol>
-
-<h3>异常处理</h3>
-
-<p>面对多重元素安插操作，保持元素次序会这一条件会造成异常抛出时能够完全复原这一需求就变得不切实际，因此只有单一元素安插操作才支持“成功，否则无效”的操作原则。</p>
-
-<h2>map multimap</h2>
-
-<p>map和multimap将key/value pair当作元素，进行管理。他们根据key的排序准则自动将元素排序。</p>
-
-<pre><code>    namespace std{
-        template &lt;class key,class T,
-                  class Compare = less&lt;key&gt;,
-                  class Allocator = allocator&lt;pair&lt;const key,T&gt; &gt; &gt;
-        class map;
-        template &lt;class key,class T,
-                  class Compare = less&lt;key&gt;,
-                  class Allocator = allocator&lt;pair&lt;const,key&gt; &gt; &gt;
-        class multimap;
-        }
-</code></pre>
-
-<p><strong>map的key,T必须满足以下两个条件：</strong></p>
-
-<ul>
-<li>key/value必须具备assignable 和 copyable性质。</li>
-<li>对排序准则而言，key必须是comparable。</li>
-</ul>
-
-<p><strong>自动排序使得map和multimap身上有了一条重要的限制：</strong></p>
-
-<p>你不可以直接改变元素的key，因为这会破坏正确次序，要修改元素的map，你必须先移除拥有该key的元素，然后插入拥有新的key/value的元素。</p>
-
-<p><strong>定义排序准则的两种方式</strong></p>
-
-<ul>
-<li><p>以template参数定义</p>
-
-<pre><code>map&lt;float,string,greater&lt;float&gt; &gt; coll;
-</code></pre></li>
-<li><p>以构造函数参数定义</p></li>
-</ul>
-
-<blockquote>
-<p>如果使用者没有提供特定排序准则，就采用缺省准则----仿函数less&lt;&gt;。less&lt;&gt;系透过operator&lt;对元素进行排序。</p>
-</blockquote>
-
-<h3>非变动性操作</h3>
-
-<p>元素比较动作只能用于型别相同的容器，比较动作系以字典顺序来检查某个容器是否小于另一个容器。如果比较不同型别的容器，必须采用algorithm的比较算法。</p>
-
-<p>map和multimap不支持元素直接存取，因此元素的存取通常是经由迭代器进行。不过有个例外，map提供下标操作符，可以直接存取元素。</p>
-
-<p><strong>一定得改变元素的key，只能以一个value相同的新元素替换掉旧元素</strong></p>
-
-<pre><code>    namespace Mylib{
-        template &lt;class Cont&gt;
-        inline
-        bool replace_key (Cont&amp; c,
-                          const typename Cont::key_type&amp; old_key,
-                          const typename Cont::key_type&amp; new_key)
-        {
-            typename Cont::iterator pos;
-            pos = c.find(old_key);
-            if(pos != c.end()){
-                c.insert(typename Cont::value_type(new_key,pos-&gt;second));
-                c.erase(pos);
-                return true;
-            }
-            else{
-                return false;
-                }
-         }
-    }
-</code></pre>
-
-<p><strong>map有一种比较方便的方法改变元素的key</strong></p>
-
-<pre><code>    coll[&#39;new_key&#39;] = coll[&#39;old_key&#39;];
-    coll.remove(&#39;old_key&#39;);
-</code></pre>
-
-<p>安插一个key/value pair的时候，要记住，在map和multimap内部，key被视为常数，要不就提供正确型别，要不就提供隐式或显式型别转换，有三个方法可以将value传入map:</p>
-
-<ol>
-<li>运用value_type</li>
-<li>运用pair&lt;&gt;</li>
-<li>运用make_pair()</li>
-</ol>
-
-<h3>将maps视为关联式数组</h3>
-
-<p>关联式容器并不提供元素的直接存取，必须依靠迭代器，但是map是个例外，non-const map提供下标操作符，支持元素的直接存取。不过，下标操作符的索引值并非元素整数值，而是元素的key.也就是说，索引可以是任意型别，而非局限为整数型别。</p>
-
-<p><strong>关联式数组行为方式的优缺点</strong></p>
-
-<ul>
-<li>优点： 可以透过更方便的接口对着map安插新元素。</li>
-<li>缺点： 可能会不小心误置新元素。</li>
-</ul>
-
-<p><strong><em>map的异常处理与set的一样</em></strong></p>
-
-<h2>其他STL容器</h2>
-
-<p>STL是个框架，除了提供标准容器，它也允许你使用其他数据结构作为容器。这样的框架正是开放性封闭原则的范例：允许扩展，谢绝修改。</p>
-
-<p>使容器STL化的三种不同的方法：</p>
-
-<ol>
-<li><p>侵入性做法</p>
-
-<blockquote>
-<p>直接提供STL容器所需接口。</p>
-</blockquote></li>
-<li><p>非侵入性做法</p>
-
-<blockquote>
-<p>由你撰写或提供特殊迭代器，作为算法和特殊容器的界面。</p>
-</blockquote></li>
-<li><p>包装法</p>
-
-<blockquote>
-<p>将上述两种方法加以组合，可以写一个外套类别来包装任何数据结构，并显示出与STL容器相似的接口。</p>
-</blockquote></li>
-</ol>
-
-<p><strong>任何STL容器都应该能够以不同的配置器加以参数化。</strong></p>
-
-</body>
-</html>
