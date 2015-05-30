@@ -32,3 +32,26 @@
 ###迭代器相关辅助函数
 C++标准程序库为迭代器提供了三个辅助函数：advance() distance()和iter_swap(),前两者提供个所有迭代器一些原本只有随机迭代器才有的能力：前进或后退多个元素，及处理迭代器之间的距离。第三个辅助函数允许交换两个迭代器的值。
 
+####advance()
+afvance()可将迭代器的位置增加，增加到的幅度由参数决定，也就是说迭代器一次前进或后退多个元素。
+
+**void advance(InputIterator& pos,Dist n)**
++ 使名为pos的input迭代器步进或后退n个元素。
++ 对Bidirectional迭代器和random access迭代器而言，n可为负值，表示向后退。
++ Dist是个template型别，通常应该是个整数型别，因为会调用<,++,--,等操作，还要和0做比较。
++ advance()从不检查迭代器是否查过序列的end()。所以，调用advance()有可能导致未定义行为----因为对着序列尾端调用operator++是一种未定义的操作行为。
++ 该函数对于random access迭代器，只是简单的调用pos+=n，因此，具有常量复杂度，对于其他任何类型的迭代器调用++pos（或--pos，如果为负值）n次，因此，对于其他任何类型的迭代器，本函数具有线性复杂度。
+
+####distance()
+函数distance()用来处理两个迭代器之间的距离。
+
+**Dist distance(InputIterator pos1,InputIterator pos2)**
++ 传回两个input迭代器pos1和pos2之间的距离。
++ 两个迭代器都必须指向同一个容器。
++ 如果不是random access迭代器，则从pos1开始往前走就能够到达pos2，即pos2的位置必须与pos1相同或在其后。
++ 回返值Dist的型别由迭代器决定：iterator_traits<InputIterator>::difference_type
++ 面对random access迭代器，因此具备常数复杂度，对于其他迭代器类型，distance()会不断递增pos1,直到抵达pos2为止，然后传回递增次数。也就是说，distance()具备线性复杂度，因此对于non-random access迭代器而言，diatance()的性能并不好，应该尽力避免使用它。
+
+
+
+ 
