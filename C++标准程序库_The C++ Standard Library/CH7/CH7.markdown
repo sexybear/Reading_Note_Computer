@@ -52,6 +52,18 @@ afvance()可将迭代器的位置增加，增加到的幅度由参数决定，�
 + 回返值Dist的型别由迭代器决定：iterator_traits<InputIterator>::difference_type
 + 面对random access迭代器，因此具备常数复杂度，对于其他迭代器类型，distance()会不断递增pos1,直到抵达pos2为止，然后传回递增次数。也就是说，distance()具备线性复杂度，因此对于non-random access迭代器而言，diatance()的性能并不好，应该尽力避免使用它。
 
+####iter_swap()
 
+**void iter_swap(ForwardIterator pos1,ForwardIterator pos2)**
++ 交换迭代器pos1和pos2所指的值
++ 迭代器的型别不必相同，但其所指的两个值必须可以相互赋值。
 
- 
+###迭代器配接器
+此类特殊迭代器使得算法能够以逆向模式，安插模式和流模式搭配工作。
+
+####逆向迭代器
+reverse迭代器是一种配接器，重新定义递增运算和递减运算，使其行为正好倒置。所有标准容器都允许使用reverse迭代器来遍历元素。
+
+####安插型迭代器
+用来将赋值新值操作转换为安插新值操作。通过这种迭代器，算法可以执行安插行为而非覆盖行为。所有的insert迭代器都隶属于output迭代器类型，所以他只提供赋值新值得能力。
+
