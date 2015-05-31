@@ -143,6 +143,63 @@
 </tbody></table>
 
 <hr>
+
+<p>一对圆括号（()）和正则表达式一起使用时可以实现以下任意一个或两个功能：</p>
+
+<ul>
+<li>对正则表达式进行分组</li>
+<li>匹配子组</li>
+</ul>
+
+<p><strong>为什么需要使用子组匹配呢？</strong></p>
+
+<p>主要是有时除了进行匹配操作外，你还想提取匹配模式的内容。</p>
+
+<h2>re模块：核心函数和方法</h2>
+
+<table><thead>
+<tr>
+<th align="left">函数/方法</th>
+<th align="right">描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left">compile(pattern,flags=0)</td>
+<td align="right">对正则表达式pattern进行编译，flags是可选标识符，并返回一个regex对象。</td>
+</tr>
+<tr>
+<td align="left">match(pattern,string,flags=0)</td>
+<td align="right">尝试用正则表达式模式pattern匹配字符串string，flags是可选标志符，如果匹配成功，则返回一个匹配对象，否则返回none。</td>
+</tr>
+<tr>
+<td align="left">search(pattern,string,flags=0)</td>
+<td align="right">在字符串string中查找正则表达式模式pattern的第一次出现，flags是可选标志符，如果匹配成功，则返回一个匹配对象，否则返回none。</td>
+</tr>
+<tr>
+<td align="left">findall(pattern,string[,flags])</td>
+<td align="right">在字符串string中查找正则表达式模式pattern的所有（非重复）出现，返回一个匹配对象的列表。</td>
+</tr>
+<tr>
+<td align="left">finditer(pattern,stirng[,flags])</td>
+<td align="right">和findall()相同，但返回的不是列表而是迭代器，对于每个匹配，该迭代器返回一个匹配对象</td>
+</tr>
+<tr>
+<td align="left">split(pattern,string,max=0)</td>
+<td align="right">根据正则表达式pattern中的分隔符把字符string分割为一个列表，返回成功匹配的列表，最多分割max次，（默认是分割所有匹配的地方）</td>
+</tr>
+<tr>
+<td align="left">sub(pattern,repl,string,max=0)</td>
+<td align="right">把字符串string中所有正则表达式pattern的地方替换成字符串repl，如果max的值没有给出，则对所有匹配的地方进行替换</td>
+</tr>
+<tr>
+<td align="left">group(num=0)</td>
+<td align="right">返回全部匹配对象（或指定编号是num的子组）</td>
+</tr>
+<tr>
+<td align="left">groups()</td>
+<td align="right">返回一个包含全部匹配的子组的元组（如果没有成功匹配，就返回一个空元素）</td>
+</tr>
+</tbody></table>
 
 </body>
 </html>

@@ -36,3 +36,26 @@
 |\A(\Z)|匹配字符串的起始（结束）||
 
 --------------------------
+一对圆括号（()）和正则表达式一起使用时可以实现以下任意一个或两个功能：
++ 对正则表达式进行分组
++ 匹配子组
+
+**为什么需要使用子组匹配呢？**
+
+主要是有时除了进行匹配操作外，你还想提取匹配模式的内容。
+
+##re模块：核心函数和方法
+|函数/方法|描述|
+|:--|--:|
+|compile(pattern,flags=0)|对正则表达式pattern进行编译，flags是可选标识符，并返回一个regex对象。|
+|match(pattern,string,flags=0)|尝试用正则表达式模式pattern匹配字符串string，flags是可选标志符，如果匹配成功，则返回一个匹配对象，否则返回none。|
+|search(pattern,string,flags=0)|在字符串string中查找正则表达式模式pattern的第一次出现，flags是可选标志符，如果匹配成功，则返回一个匹配对象，否则返回none。|
+|findall(pattern,string[,flags])|在字符串string中查找正则表达式模式pattern的所有（非重复）出现，返回一个匹配对象的列表。|
+|finditer(pattern,stirng[,flags])|和findall()相同，但返回的不是列表而是迭代器，对于每个匹配，该迭代器返回一个匹配对象|
+|split(pattern,string,max=0)|根据正则表达式pattern中的分隔符把字符string分割为一个列表，返回成功匹配的列表，最多分割max次，（默认是分割所有匹配的地方）|
+|sub(pattern,repl,string,max=0)|把字符串string中所有正则表达式pattern的地方替换成字符串repl，如果max的值没有给出，则对所有匹配的地方进行替换|
+|group(num=0)|返回全部匹配对象（或指定编号是num的子组）|
+|groups()|返回一个包含全部匹配的子组的元组（如果没有成功匹配，就返回一个空元素）|
+
+
+
