@@ -9,48 +9,140 @@
    
 </head>
 <body>
-    <h1>Linux编程笔记</h1>
+    <h1>正则表达式</h1>
 
-<h2>函数调用栈空间的分配与释放</h2>
+<p>正则表达式是一些由字符和特殊字符组成的字符串，她们描述了这些字符和字符的某种重复模式，因此能按某种模式匹配一个有相似特征的字符串的集合。</p>
 
-<blockquote>
-<ol>
-<li>函数执行的时候有自己的临时栈，C++函数执行的时候有两个内存空间，一个是函数本身的临时栈空间，一个是原来栈空间的对象。C语言的只有一个自己的栈空间。</li>
-<li>函数的参数就在临时栈中。如果函数传递实参，则用来初始化临时的参数变量。</li>
-<li>通过寄存器返回值。（使用返回值返回数据）</li>
-<li>通过参数返回值。（参数必须是指针）指针指向的区域必须事先分配。</li>
-<li>如果参数返回指针，那么参数就是双指针。</li>
-</ol>
-</blockquote>
+<p><strong>查找与匹配的比较</strong></p>
 
-<p><strong>C和C++的主要区别的地方：</strong></p>
+<p>搜索，在字符串的任意部分中查找匹配的模式，而匹配时指，判断一个字符串能否从起始处全部或者部分的匹配某个模式。搜索通过search()函数或方法来实现，而匹配则是调用match()来实现。</p>
 
-<ul>
-<li>bool类型</li>
-<li><strong>引用</strong></li>
-<li><strong>模板</strong></li>
-<li>命名空间</li>
-<li><strong>异常处理</strong></li>
-<li>面向对象</li>
-</ul>
+<p>正则表达式的强大之处在于特殊符号的应用，特殊符号定义了字符集合，子组匹配，模式重复次数。</p>
 
-<p>函数前面加的编译属性 _<em>stdcall \</em><em>fastcall \</em>_cdecl</p>
+<table><thead>
+<tr>
+<th align="left">记号</th>
+<th>说明</th>
+<th align="right">举例</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left">iteral</td>
+<td>匹配字符串的值</td>
+<td align="right">foo</td>
+</tr>
+<tr>
+<td align="left">re1/re2</td>
+<td>匹配正则表达式re1或re2</td>
+<td align="right"></td>
+</tr>
+<tr>
+<td align="left">.</td>
+<td>匹配任何字符（换行符除外）</td>
+<td align="right">b.b</td>
+</tr>
+<tr>
+<td align="left">^</td>
+<td>匹配字符串的开始</td>
+<td align="right"><sup>Dear</sup></td>
+</tr>
+<tr>
+<td align="left">$</td>
+<td>匹配字符串的结尾</td>
+<td align="right">/bin/*sh$</td>
+</tr>
+<tr>
+<td align="left">*</td>
+<td>匹配前面出现的正则表达式零次或多次</td>
+<td align="right">[A-Za-z0-9]*</td>
+</tr>
+<tr>
+<td align="left">+</td>
+<td>匹配前面出现的正则表达式一次货多次</td>
+<td align="right">[a-z]+.com</td>
+</tr>
+<tr>
+<td align="left">?</td>
+<td>匹配前面出现的正则表达式零次或一次</td>
+<td align="right">goo?</td>
+</tr>
+<tr>
+<td align="left">{N}</td>
+<td>匹配前面出现的正则表达式</td>
+<td align="right">{0-9}{3}</td>
+</tr>
+<tr>
+<td align="left">{M，N}</td>
+<td>匹配重复出现M次到N次的正则表达式</td>
+<td align="right">[0-9]{5,9}</td>
+</tr>
+<tr>
+<td align="left">[...]</td>
+<td>匹配字符组里出现的任意一个字符</td>
+<td align="right">[aeiou]</td>
+</tr>
+<tr>
+<td align="left">[..x-y..]</td>
+<td>匹配从字符x到y的任意一个字符</td>
+<td align="right">[0-9],[A-Za-z]</td>
+</tr>
+<tr>
+<td align="left">[<sup>...]</sup></td>
+<td>不匹配此字符集中出现的任何一个字符，包括某一范围的字符（如果在此字符集中出现）</td>
+<td align="right">[<sup>aeiou]</sup> [<sup>A-Za-z0-9]</sup></td>
+</tr>
+<tr>
+<td align="left">(*</td>
+<td>+</td>
+<td align="right">?</td>
+</tr>
+<tr>
+<td align="left">{...}</td>
+<td>匹配封闭括号中正则表达式（RE）,并保存为子组</td>
+<td align="right">{[0-9]{3}}?, (oo</td>
+</tr>
+</tbody></table>
 
-<blockquote>
-<ol>
-<li>决定函数栈压栈的参数顺序。（三个都是从右到左。）</li>
-<li><p>决定了函数栈的清空方式。</p>
+<table><thead>
+<tr>
+<th align="left">\d</th>
+<th>匹配任何数字，和[0-9]一样（\D是\d的反义：任何非数字符）</th>
+<th align="right">data\d+.txt</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left">\w</td>
+<td>匹配任何数字字母字符，和[A-Za-z0-9]相同（\W是\w的反义）</td>
+<td align="right">[A-Za-z_]\w+</td>
+</tr>
+<tr>
+<td align="left">\s</td>
+<td>匹配任何空白符（\S是\s的反义）</td>
+<td align="right">of\sthe</td>
+</tr>
+<tr>
+<td align="left">\b</td>
+<td>匹配单词边界（\B是\b的反义）</td>
+<td align="right">\bThe\b</td>
+</tr>
+<tr>
+<td align="left">\nn</td>
+<td>匹配已保存的子组</td>
+<td align="right">price:\16</td>
+</tr>
+<tr>
+<td align="left">\c</td>
+<td>逐一匹配特殊字符c(取消他的特殊含义，按字面匹配)</td>
+<td align="right"></td>
+</tr>
+<tr>
+<td align="left">\A(\Z)</td>
+<td>匹配字符串的起始（结束）</td>
+<td align="right"></td>
+</tr>
+</tbody></table>
 
-<p>stdcall：调用者负责清空函数栈，函数本身不负责清空临时栈。
-    fastcall:调用者自己清空栈，然后返回值。<br>
-    cdecl:每一个调用者都有自己专门的清空参数。</p></li>
-<li><p>决定了函数的名字转换方式。</p></li>
-</ol>
-</blockquote>
-
-<h3>虚拟内存</h3>
-
-<p>**</p>
+<hr>
 
 </body>
 </html>
