@@ -123,7 +123,49 @@
 
 <h4>安插型迭代器</h4>
 
-<p>用来将赋值新值操作转换为安插新值操作。通过这种迭代器，算法可以执行安插行为而非覆盖行为。所有的insert迭代器都隶属于output迭代器类型，所以他只提供赋值新值得能力。</p>
+<p>用来将赋值新值操作转换为安插新值操作。通过这种迭代器，算法可以执行安插行为而非覆盖行为。所有的insert迭代器都隶属于output迭代器类型，所以他只提供赋值新值的能力。</p>
+
+<p>insert迭代器使用的两个实用技巧：</p>
+
+<ul>
+<li>operator*被设定为一个无实际动作的动作，只是简单的传回*this，所以对insert迭代器来说，*pos与pos等价。</li>
+<li>赋值动作被转化为安插操作，事实上insert迭代器会调用容器的push_back()，push_front()或insert()成员函数。</li>
+</ul>
+
+<p><strong>insert迭代器的种类</strong></p>
+
+<p>C++标准程序库提供了三种insert迭代器：</p>
+
+<ol>
+<li>back inserter</li>
+<li>front inserter</li>
+<li>general inserter</li>
+</ol>
+
+<p>他们之间的区别在于插入位置。back inserter只能用在vector,deque,list,string身上，front inserter只能用在deque和list身上。</p>
+
+<h3>流迭代器</h3>
+
+<p>stream迭代器是一种迭代器配接器。</p>
+
+<h4>ostream迭代器</h4>
+
+<p>ostream迭代器可以将被赋予的值写入output stream中，它与insert 迭代器概念一致，唯一的却别在于ostream迭代器将赋值操作转化为operator&lt;&lt;。</p>
+
+<h4>istream迭代器</h4>
+
+<p>istream迭代器用来从input stream读取元素。</p>
+
+<p>如果满足以下条件，我们便说两个istream迭代器相等：</p>
+
+<ul>
+<li>两者都是end-of_stream迭代器（因而不能再进行读取操作），或</li>
+<li>两者都可以再进行读取操作，并指向相同的stream。</li>
+</ul>
+
+<h3>迭代器特性</h3>
+
+<p><strong>此处后期后再详细阅读</strong></p>
 
 </body>
 </html>
