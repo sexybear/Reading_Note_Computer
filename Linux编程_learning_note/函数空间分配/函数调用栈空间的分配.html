@@ -50,7 +50,112 @@
 
 <h3>虚拟内存</h3>
 
-<p>**</p>
+<p><strong>一个程序不能访问另外一个程序的地址指向的空间。</strong></p>
+
+<p>理解：</p>
+
+<ol>
+<li>每个程序的开始地址都是0x80084000</li>
+<li>程序中使用的地址不是物理地址，而是逻辑地址（虚拟内存），逻辑地址仅仅是编号，编号使用int4字节整数表示（494967296）。每一个程序都提供了4G的访问能力。</li>
+</ol>
+
+<p><strong>逻辑地址与物理地址关联才有意义：过程本身称为内存映射</strong></p>
+
+<p>背景：</p>
+
+<p>虚拟内存的提出是禁止用户直接访问物理存储地址，有助于系统的稳定。</p>
+
+<p>结论：</p>
+
+<p>虚拟地址与物理地址在映射的时候有一个基本单位，为4k,16进制为1000，（内存页）。</p>
+
+<p>段错误：无效访问。</p>
+
+<p>合法访问：malloc分配的空间之外的空间可以访问，但访问非法。能够访问，不意味着合法。</p>
+
+<p><strong>虚拟地址</strong></p>
+
+<p>linux中的虚拟内存空间分为栈和堆</p>
+
+<p>栈：编译器自动生成代码维护</p>
+
+<p>堆：地址是否映射，映射的空间是否被管理。</p>
+
+<ol>
+<li><p>brk/sbrk 内存映射函数</p>
+
+<pre><code>分配释放内存
+int brk(void *end);//分配空间，释放空间
+void *sbrk(int size);//返回空间地址
+</code></pre></li>
+</ol>
+
+<p>应用：</p>
+
+<pre><code>1.使用sbrk分配空间。
+2.使用sbrk得到没有映射的虚拟地址
+3.使用brk分配空间
+4.使用brk释放空间
+</code></pre>
+
+<p>理解</p>
+
+<pre><code>+ sbrk(int size) 如果是第一次运行，则返回没有映射的空闲空间，同时产生一个数据：指向地址。sbrk与brk后台系统维护一个指针，指针默认是null,调用sbrk,判定指针是否是0，是的话，系统得到大块的空闲空间的首地址初始化。同时把指针+size。如果是否，返回指针，并且把指针位置+size。
+</code></pre>
+
+<p>补充知识点：帮助手册  man 节（1-8） 关键字   其中的1是linux的系统指令，2是系统函数，3是标准C函数的文档，7是系统的编程帮助。</p>
+
+<pre><code>    #include &lt;stdio.h&gt;
+    #include &lt;unistd.h&gt;
+    int isPrimer(int a)
+    {
+        int r = 0;
+        int i;
+        for(i = 2;i&lt;a;i++)
+        {
+            if(a%i==0)
+            {
+                r = 1;
+                return r;
+            }
+        }
+        return 0;
+    }
+
+    main()
+    {
+        int i = 2;
+        int b;
+        int *r;
+        r = sbrk(0);
+        for(;i&lt;10000;i++)
+        {
+            b = isPrimer(i);
+            if(b==0)
+            {
+                brk(4);
+                *r = i;
+                r = sbrk(0);
+            }
+        }
+        i = 0;
+        r = p;
+        while(r!=sbrk(0))
+        {
+            printf(&quot;%d\n&quot;,*r);
+            r++;
+        }
+        brk(p);
+    }
+</code></pre>
+
+<p>总结：new malloc brk/sbrk 智能指针 STL </p>
+
+<p>异常处理： </p>
+
+<ul>
+<li>int brk(void*)  void *sbrk(int) 如果成功，brk返回0，sbrk返回指针。如果失败，brk返回-1，sbrk返回（void*）-1</li>
+</ul>
 
 </body>
 </html>
