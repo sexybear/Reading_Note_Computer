@@ -1,0 +1,246 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+   <meta http-equiv="content-type" content="text/html;charset=UTF-8">
+   <style type="text/css">
+   /*CSS stylesheet is based on killwing's flavored markdown style:https://gist.github.com/2937864*/body{    margin: 0 auto;    font: 13px/1.231 Helvetica, Arial, sans-serif;    color: #444444;    line-height: 1;    max-width: 960px;    padding: 5px;}h1, h2, h3, h4 {    color: #111111;    font-weight: 400;}h1, h2, h3, h4, h5, p {    margin-bottom: 16px;    padding: 0;}h1 {    font-size: 28px;}h2 {    font-size: 22px;    margin: 20px 0 6px;}h3 {    font-size: 21px;}h4 {    font-size: 18px;}h5 {    font-size: 16px;}a {    color: #0099ff;    margin: 0;    padding: 0;    vertical-align: baseline;}a:link,a:visited{ text-decoration:none;}a:hover{ text-decoration:underline;}ul, ol {    padding: 0;    margin: 0;}li {    line-height: 24px;    margin-left: 44px;}li ul, li ul {    margin-left: 24px;}ul, ol {    font-size: 14px;    line-height: 20px;    max-width: 540px;}p {    font-size: 14px;    line-height: 20px;    max-width: 540px;    margin-top: 3px;}pre {    padding: 0px 4px;    max-width: 800px;    white-space: pre-wrap;    font-family: Consolas, Monaco, Andale Mono, monospace;    line-height: 1.5;    font-size: 13px;    border: 1px solid #ddd;    background-color: #f7f7f7;    border-radius: 3px;}code {    font-family: Consolas, Monaco, Andale Mono, monospace;    line-height: 1.5;    font-size: 13px;    border: 1px solid #ddd;    background-color: #f7f7f7;    border-radius: 3px;}pre code {    border: 0px;}aside {    display: block;    float: right;    width: 390px;}blockquote {    border-left:.5em solid #40AA53;    padding: 0 2em;    margin-left:0;    max-width: 476px;}blockquote  cite {    font-size:14px;    line-height:20px;    color:#bfbfbf;}blockquote cite:before {    content: '\2014 \00A0';}blockquote p {      color: #666;    max-width: 460px;}hr {    height: 1px;    border: none;    border-top: 1px dashed #0066CC}button,input,select,textarea {  font-size: 100%;  margin: 0;  vertical-align: baseline;  *vertical-align: middle;}button, input {  line-height: normal;  *overflow: visible;}button::-moz-focus-inner, input::-moz-focus-inner {  border: 0;  padding: 0;}button,input[type="button"],input[type="reset"],input[type="submit"] {  cursor: pointer;  -webkit-appearance: button;}input[type=checkbox], input[type=radio] {  cursor: pointer;}/* override default chrome & firefox settings */input:not([type="image"]), textarea {  -webkit-box-sizing: content-box;  -moz-box-sizing: content-box;  box-sizing: content-box;}input[type="search"] {  -webkit-appearance: textfield;  -webkit-box-sizing: content-box;  -moz-box-sizing: content-box;  box-sizing: content-box;}input[type="search"]::-webkit-search-decoration {  -webkit-appearance: none;}label,input,select,textarea {  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;  font-size: 13px;  font-weight: normal;  line-height: normal;  margin-bottom: 18px;}input[type=checkbox], input[type=radio] {  cursor: pointer;  margin-bottom: 0;}input[type=text],input[type=password],textarea,select {  display: inline-block;  width: 210px;  padding: 4px;  font-size: 13px;  font-weight: normal;  line-height: 18px;  height: 18px;  color: #808080;  border: 1px solid #ccc;  -webkit-border-radius: 3px;  -moz-border-radius: 3px;  border-radius: 3px;}select, input[type=file] {  height: 27px;  line-height: 27px;}textarea {  height: auto;}/* grey out placeholders */:-moz-placeholder {  color: #bfbfbf;}::-webkit-input-placeholder {  color: #bfbfbf;}input[type=text],input[type=password],select,textarea {  -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;  -moz-transition: border linear 0.2s, box-shadow linear 0.2s;  transition: border linear 0.2s, box-shadow linear 0.2s;  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);}input[type=text]:focus, input[type=password]:focus, textarea:focus {  outline: none;  border-color: rgba(82, 168, 236, 0.8);  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);}/* buttons */button {  display: inline-block;  padding: 4px 14px;  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;  font-size: 13px;  line-height: 18px;  -webkit-border-radius: 4px;  -moz-border-radius: 4px;  border-radius: 4px;  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);  background-color: #0064cd;  background-repeat: repeat-x;  background-image: -khtml-gradient(linear, left top, left bottom, from(#049cdb), to(#0064cd));  background-image: -moz-linear-gradient(top, #049cdb, #0064cd);  background-image: -ms-linear-gradient(top, #049cdb, #0064cd);  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #049cdb), color-stop(100%, #0064cd));  background-image: -webkit-linear-gradient(top, #049cdb, #0064cd);  background-image: -o-linear-gradient(top, #049cdb, #0064cd);  background-image: linear-gradient(top, #049cdb, #0064cd);  color: #fff;  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);  border: 1px solid #004b9a;  border-bottom-color: #003f81;  -webkit-transition: 0.1s linear all;  -moz-transition: 0.1s linear all;  transition: 0.1s linear all;  border-color: #0064cd #0064cd #003f81;  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);}button:hover {  color: #fff;  background-position: 0 -15px;  text-decoration: none;}button:active {  -webkit-box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);  -moz-box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);  box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);}button::-moz-focus-inner {  padding: 0;  border: 0;}/* table  */table {    border-spacing: 0;    border: 1px solid #ccc;}td, th{    border: 1px solid #ccc;    padding: 5px;}/* code syntax highlight.Documentation: http://www.mdcharm.com/documentation/code_syntax_highlighting.html#custom_your_own */pre .literal,pre .comment,pre .template_comment,pre .diff .header,pre .javadoc {    color: #008000;}pre .keyword,pre .css .rule .keyword,pre .winutils,pre .javascript .title,pre .nginx .title,pre .subst,pre .request,pre .status {    color: #0000FF;    font-weight: bold}pre .number,pre .hexcolor,pre .python .decorator,pre .ruby .constant {    color: #0000FF;}pre .string,pre .tag .value,pre .phpdoc,pre .tex .formula {    color: #D14}pre .title,pre .id {    color: #900;    font-weight: bold}pre .javascript .title,pre .lisp .title,pre .clojure .title,pre .subst {    font-weight: normal}pre .class .title,pre .haskell .type,pre .vhdl .literal,pre .tex .command {    color: #458;    font-weight: bold}pre .tag,pre .tag .title,pre .rules .property,pre .django .tag .keyword {    color: #000080;    font-weight: normal}pre .attribute,pre .variable,pre .lisp .body {    color: #008080}pre .regexp {    color: #009926}pre .class {    color: #458;    font-weight: bold}pre .symbol,pre .ruby .symbol .string,pre .lisp .keyword,pre .tex .special,pre .prompt {    color: #990073}pre .built_in,pre .lisp .title,pre .clojure .built_in {    color: #0086b3}pre .preprocessor,pre .pi,pre .doctype,pre .shebang,pre .cdata {    color: #999;    font-weight: bold}pre .deletion {    background: #fdd}pre .addition {    background: #dfd}pre .diff .change {    background: #0086b3}pre .chunk {    color: #aaa}pre .markdown .header {    color: #800;    font-weight: bold;}pre .markdown .blockquote {    color: #888;}pre .markdown .link_label {    color: #88F;}pre .markdown .strong {    font-weight: bold;}pre .markdown .emphasis {    font-style: italic;}
+   </style>
+   
+   
+</head>
+<body>
+    <h1>python网络编程</h1>
+
+<p><strong>套接字</strong></p>
+
+<p>套接字是一种具有通讯端点概念的计算机数据网络结构。</p>
+
+<p>合法的端口号范围是0到65535，其中，小于1024的是系统保留端口。</p>
+
+<p><strong>套接字类型</strong></p>
+
+<ul>
+<li><p>面向连接</p>
+
+<blockquote>
+<p>在通讯之前一定要建立一条连接，这种通讯方式也被称为虚电路或流套接字，面向连接的通讯方式是提供了顺序的，可靠的，不会重复的数据传输，而且也不会被加上数据边界，这也意味着，每一个要发送的信息，可能会被拆分成多份，每一份都会不多不少的正确到达目的地。然后被重新按顺序拼接起来，传给正在等待的应用程序。</p>
+
+<p>实现这种连接的主要协议就是传输控制协议（TCP），要创建TCP套接字就得在创建的时候，指定套接字类型为SOCK_STREAM，由于这些套接字使用internet协议来查找网络中的主机，这样形成的整个系统，一般会有这两个协议（TCP和IP）来提及，即TCP/IP。</p>
+</blockquote></li>
+<li><p>无连接</p>
+
+<blockquote>
+<p>无需建立连接就可以通讯，数据到达的顺序，可靠性以及数据不可靠性就无法保证了，数据包会保留数据边界，这就表示，数据不会像面向连接的协议那样被拆分成小块。</p>
+
+<p>实现这种连接的主要协议就是用户数据报协议，要创建UDP套接字就得在创建的时候，指定套接字类型为SOCK_DGRM。</p>
+</blockquote></li>
+</ul>
+
+<p><strong>套接字对象内建方法</strong></p>
+
+<p>服务器端套接字函数</p>
+
+<table><thead>
+<tr>
+<th align="left">函数</th>
+<th align="right">描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left">s.bind()</td>
+<td align="right">绑定地址到套接字</td>
+</tr>
+<tr>
+<td align="left">s.listen()</td>
+<td align="right">开始TCP监听</td>
+</tr>
+<tr>
+<td align="left">s.accept()</td>
+<td align="right">被动接受TCP客户的连接，（阻塞式）等待连接的到来</td>
+</tr>
+</tbody></table>
+
+<hr>
+
+<p>客户端套接字函数</p>
+
+<table><thead>
+<tr>
+<th align="left">函数</th>
+<th align="right">描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left">s.connect()</td>
+<td align="right">主动初始化TCP服务器连接</td>
+</tr>
+<tr>
+<td align="left">s.connect_ex()</td>
+<td align="right">connect()函数的扩展版本，出错时返回出错码，而不是抛异常</td>
+</tr>
+</tbody></table>
+
+<hr>
+
+<p>公共用途的套接字函数</p>
+
+<table><thead>
+<tr>
+<th align="left">函数</th>
+<th align="right">描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left">s.recv()</td>
+<td align="right">接受TCP数据</td>
+</tr>
+<tr>
+<td align="left">s.send()</td>
+<td align="right">发送TCP数据</td>
+</tr>
+<tr>
+<td align="left">s.sendall()</td>
+<td align="right">完整发送TCP数据</td>
+</tr>
+<tr>
+<td align="left">s.recvfrom()</td>
+<td align="right">接受UDP数据</td>
+</tr>
+<tr>
+<td align="left">s.sendto()</td>
+<td align="right">发送UDP数据</td>
+</tr>
+<tr>
+<td align="left">s.getpeername()</td>
+<td align="right">连接到当前套接字的远端的地址</td>
+</tr>
+<tr>
+<td align="left">s.getsockname()</td>
+<td align="right">当前套接字的地址</td>
+</tr>
+<tr>
+<td align="left">s.getsockopt()</td>
+<td align="right">返回指定套接字的参数</td>
+</tr>
+<tr>
+<td align="left">s.setsockopt()</td>
+<td align="right">设置指定套接字的参数</td>
+</tr>
+<tr>
+<td align="left">s.close()</td>
+<td align="right">关闭套接字</td>
+</tr>
+</tbody></table>
+
+<hr>
+
+<p>Block-Oriented socket methods</p>
+
+<table><thead>
+<tr>
+<th align="left">函数</th>
+<th align="right">描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left">s.setblocking()</td>
+<td align="right">设置套接字的阻塞与非阻塞模式</td>
+</tr>
+<tr>
+<td align="left">s.settimeout()</td>
+<td align="right">设置阻塞套接字操作的超时时间</td>
+</tr>
+<tr>
+<td align="left">s.gettimeout()</td>
+<td align="right">得到阻塞套接字操作的超时时间</td>
+</tr>
+</tbody></table>
+
+<hr>
+
+<p>面向文件的套接字函数</p>
+
+<table><thead>
+<tr>
+<th align="left">函数</th>
+<th align="right">描述</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left">s.fileno()</td>
+<td align="right">套接字的文件描述符</td>
+</tr>
+<tr>
+<td align="left">s.makefile()</td>
+<td align="right">创建一个与该套接字关联的文件</td>
+</tr>
+</tbody></table>
+
+<hr>
+
+<p><strong>论优美的推出和调用服务器的close()函数</strong></p>
+
+<p>友好的退出的一个方法就是把服务器的无限循环放在一个try-except语句的try子句当中，并捕获EOFError和KeyboardInterrupt异常，在异常处理子句中，调用close()函数关闭服务器的套接字。</p>
+
+<h2>twisted框架介绍</h2>
+
+<p>twisted是一个完全事件驱动的网络框架，它允许你使用和开发完全异步的网络应用程序和协议。</p>
+
+<p>服务器实例</p>
+
+<pre><code>    from twisted.internet import protocol, reactor
+    from time import ctime
+
+    PORT = 21567
+
+    class TSServProtocol(protocol.Protocol):
+        def connectionMade(self):
+            clnt = self.clnt = self.transport.getPeer().host
+            print &#39;...connected from:&#39;, clnt
+        def dataReceived(self, data):
+            self.transport.write(&#39;[%s] %s&#39; % (
+            ctime(), data))
+
+    factory = protocol.Factory()
+    factory.protocol = TSServProtocol
+    print &#39;waiting for connection...&#39;
+    reactor.listenTCP(PORT, factory)
+    reactor.run()
+</code></pre>
+
+<p>客户端实例</p>
+
+<pre><code>    #!/usr/bin/env python
+
+    from twisted.internet import protocol, reactor
+
+    HOST = &#39;localhost&#39;
+    PORT = 21567
+
+    class TSClntProtocol(protocol.Protocol):
+        def sendData(self):
+            data = raw_input(&#39;&gt; &#39;)
+            if data:
+                print &#39;...sending %s...&#39; % data
+                self.transport.write(data)
+            else:
+                self.transport.loseConnection()
+
+        def connectionMade(self):
+            self.sendData()
+
+        def dataReceived(self, data):
+            print data
+            self.sendData()
+
+    class TSClntFactory(protocol.ClientFactory):
+        protocol = TSClntProtocol
+        clientConnectionLost = clientConnectionFailed = \
+            lambda self, connector, reason: reactor.stop()
+
+    reactor.connectTCP(HOST, PORT, TSClntFactory())
+    reactor.run()
+</code></pre>
+
+</body>
+</html>
