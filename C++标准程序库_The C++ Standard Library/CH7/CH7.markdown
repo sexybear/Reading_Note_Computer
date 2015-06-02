@@ -65,5 +65,37 @@ afvance()可将迭代器的位置增加，增加到的幅度由参数决定，�
 reverse迭代器是一种配接器，重新定义递增运算和递减运算，使其行为正好倒置。所有标准容器都允许使用reverse迭代器来遍历元素。
 
 ####安插型迭代器
-用来将赋值新值操作转换为安插新值操作。通过这种迭代器，算法可以执行安插行为而非覆盖行为。所有的insert迭代器都隶属于output迭代器类型，所以他只提供赋值新值得能力。
+用来将赋值新值操作转换为安插新值操作。通过这种迭代器，算法可以执行安插行为而非覆盖行为。所有的insert迭代器都隶属于output迭代器类型，所以他只提供赋值新值的能力。
+
+insert迭代器使用的两个实用技巧：
++ operator*被设定为一个无实际动作的动作，只是简单的传回*this，所以对insert迭代器来说，*pos与pos等价。
++ 赋值动作被转化为安插操作，事实上insert迭代器会调用容器的push_back()，push_front()或insert()成员函数。
+
+
+**insert迭代器的种类**
+
+C++标准程序库提供了三种insert迭代器：
+
+1. back inserter
+2. front inserter
+3. general inserter
+
+他们之间的区别在于插入位置。back inserter只能用在vector,deque,list,string身上，front inserter只能用在deque和list身上。
+
+###流迭代器
+stream迭代器是一种迭代器配接器。
+
+####ostream迭代器
+ostream迭代器可以将被赋予的值写入output stream中，它与insert 迭代器概念一致，唯一的却别在于ostream迭代器将赋值操作转化为operator<<。
+
+####istream迭代器
+istream迭代器用来从input stream读取元素。
+
+如果满足以下条件，我们便说两个istream迭代器相等：
++ 两者都是end-of_stream迭代器（因而不能再进行读取操作），或
++ 两者都可以再进行读取操作，并指向相同的stream。
+
+###迭代器特性
+
+**此处后期后再详细阅读**
 
