@@ -9,220 +9,109 @@
    
 </head>
 <body>
-    <h1>C++标准程序库读书笔记</h1>
+    <h1>shell脚本学习指南</h1>
 
-<h2>仿函数（函数对象）</h2>
+<h2>CH2 入门</h2>
 
-<p>仿函数的定义方法</p>
-
-<pre><code>class FunctionObjectType
-{
-    public:
-    void operator()()
-    {
-        statements
-    }
-};
-</code></pre>
-
-<p>这种定义方式的好处：</p>
+<p>shell语言特性：</p>
 
 <ul>
-<li>仿函数比一般函数更灵巧，因为它可以拥有状态。对于仿函数，可以同时拥有两个状态不同的实体，一般函数则不能这样。</li>
-<li>每个仿函数都有其型别，因此你可以将仿函数的型别当作template参数来传递，从而指定某种行为模式，此处还有一个好处，容器型别也会因为仿函数的不同而不同。</li>
-<li>执行速度上，仿函数通常比函数指针更快。</li>
+<li>简单性 shell是一个高级语言。</li>
+<li>可移植性 </li>
+<li>开发容易</li>
 </ul>
 
-<p>仿函数是传值，不是传址。因此算法并不会改变岁参数而来的仿函数的标志。</p>
+<p>当shell执行一个程序时，会要求UNIX内核启动一个新的进程，以便在该进程里执行所指定的程序。</p>
 
-<p>将仿函数以传值方式传递的优点和缺点：</p>
+<p>当一个文件中开头的两个字符是#！时，内核会扫描该行其余的部分，内核会扫描该行的其余的部分，看是否存在可用来执行程序的解释器的完整路径。</p>
+
+<p><strong>shell的几个初级的陷阱</strong></p>
 
 <ul>
-<li>优点：可以传递常量和暂时表达式。</li>
-<li>缺点：无法改变仿函数的状态，算法可以改变仿函数的状态，但你无法存取并改变最终状态，因为改变的只不过是仿函数的副本。</li>
+<li>当今的系统，对#！这一行的长度限制从63到1024个字符都有，请尽量不要超过64个字符。</li>
+<li>在某些系统上，命令行部分包含了命令的完整路径名称，不过有些系统却不是这样，命令行的部分会原封不动的传给程序，因此，脚本是否具可移植性取决于是否有完整的路径名称。</li>
+<li>别在选项之后放置任何空白，因为空白也会跟着选项一起传递给被引用的程序。</li>
+<li>需要知道解释器的完整路径名称，这可以用来规避可移植性问题，因为不同的厂商可能将同样的东西放在不同的地方。</li>
+<li>一些较旧的系统上，内核不具备解释#！的能力，有些shell会自行处理，这些shell对于#！与紧随其后的解释器名称之间是否可以有空白，可能有不同的解释。</li>
 </ul>
 
-<p>有两个办法可以从运用了仿函数的算法中获取结果或反馈：</p>
+<p>shell识别三种基本命令：内建命令，shell函数以及外部命令：</p>
 
+<ul>
+<li>内建命令是由shell本身所执行的命令。</li>
+<li>shell函数是功能健全的一些列程序代码，以shell语言写成，可以像命令那样引用。</li>
+<li><p>外部命令是有shell的副本（新的进程）所执行的命令</p>
+
+<blockquote>
 <ol>
-<li>以by reference的方式传递仿函数</li>
-<li>运用for_each()算法的回返值。</li>
+<li>建立一个新的进程，此进程即为shell的一个副本。</li>
+<li>在新的进程里，在PATH变量内所列出的目录中，寻找特定的命令。</li>
+<li>在新的进程里，以所找到的新程序来取代执行中的shell程序并执行。</li>
+<li>程序完成后，最初的shell会接着从终端读取下一条命令，或执行脚本里的下一条命令。</li>
 </ol>
-
-<h3>判断式和仿函数</h3>
-
-<p>判断式：返回布尔值（可转换为bool）的一个函数或仿函数。对STL而言，并非所有返回布尔值的函数都是合法的判断式。</p>
-
-<p><strong>预定义的仿函数</strong></p>
-
-<table><thead>
-<tr>
-<th align="left">仿函数</th>
-<th align="right">效果</th>
-</tr>
-</thead><tbody>
-<tr>
-<td align="left">negate<type>()</td>
-<td align="right">-param</td>
-</tr>
-<tr>
-<td align="left">plus<type>()</td>
-<td align="right">param1+param2</td>
-</tr>
-<tr>
-<td align="left">minus<type>()</td>
-<td align="right">param1-param2</td>
-</tr>
-<tr>
-<td align="left">multiplies<type>()</td>
-<td align="right">param1*param2</td>
-</tr>
-<tr>
-<td align="left">divides<type>()</td>
-<td align="right">param1/param2</td>
-</tr>
-<tr>
-<td align="left">modulus<type>()</td>
-<td align="right">param1%param2</td>
-</tr>
-<tr>
-<td align="left">equal_to<type>()</td>
-<td align="right">param1==param2</td>
-</tr>
-<tr>
-<td align="left">not_equal_to<type>()</td>
-<td align="right">param1!=param2</td>
-</tr>
-<tr>
-<td align="left">less<type>()</td>
-<td align="right">param1&lt;param2</td>
-</tr>
-<tr>
-<td align="left">greater<type>()</td>
-<td align="right">param1&gt;param2</td>
-</tr>
-<tr>
-<td align="left">less_equal<type>()</td>
-<td align="right">param1&lt;=param2</td>
-</tr>
-<tr>
-<td align="left">greater_equal<type>()</td>
-<td align="right">param1&gt;=param2</td>
-</tr>
-<tr>
-<td align="left">logical_not<type>()</td>
-<td align="right">!param</td>
-</tr>
-<tr>
-<td align="left">logical_and<type>()</td>
-<td align="right">param1&amp;&amp;param2</td>
-</tr>
-<tr>
-<td align="left">logical_or<type>()</td>
-<td align="right">param1</td>
-</tr>
-</tbody></table>
-
-<hr>
-
-<p><strong>函数配接器</strong></p>
-
-<p>函数配接器是指能够将仿函数和另一个仿函数结合起来的仿函数。声明于<functional>中。</p>
-
-<table><thead>
-<tr>
-<th align="left">表达式</th>
-<th align="right">效果</th>
-</tr>
-</thead><tbody>
-<tr>
-<td align="left">bind1st(op,value)</td>
-<td align="right">op(value,param)</td>
-</tr>
-<tr>
-<td align="left">bind2nd(op,value)</td>
-<td align="right">op(value,param)</td>
-</tr>
-<tr>
-<td align="left">not1(op)</td>
-<td align="right">!op(param)</td>
-</tr>
-<tr>
-<td align="left">not2(op)</td>
-<td align="right">!op(param1,param2)</td>
-</tr>
-</tbody></table>
-
-<hr>
-
-<p><strong>为成员函数预定义的仿函数</strong></p>
-
-<table><thead>
-<tr>
-<th align="left">表达式</th>
-<th align="right">效果</th>
-</tr>
-</thead><tbody>
-<tr>
-<td align="left">mem_fun——ref(op)</td>
-<td align="right">调用op,那是某对象的一个const成员函数</td>
-</tr>
-<tr>
-<td align="left">mem_fun(op)</td>
-<td align="right">调用op,那是某对象指针的一个const成员函数</td>
-</tr>
-</tbody></table>
-
-<h2>被mem_fun_ref和mem_fun两者都以无参数或单参数方式来调用成员函数。</h2>
-
-<p><strong>针对一般函数而设计的函数配接器</strong></p>
-
-<table><thead>
-<tr>
-<th align="left">表达式</th>
-<th align="right">效果</th>
-</tr>
-</thead><tbody>
-<tr>
-<td align="left">ptr_fun(op)</td>
-<td align="right">op(param)  op(param1,param2)</td>
-</tr>
-</tbody></table>
-
-<hr>
-
-<h3>辅助用仿函数</h3>
-
-<p>一般而言，所有的函数行文都可以藉由仿函数的组合而实现。</p>
-
-<p><strong>下面这些组合型配接器很有用</strong></p>
-
-<ul>
-<li><p>f(g(elem))</p>
-
-<blockquote>
-<p>这是一元组合函数的一般形式，一元判断式被嵌套调用，g()执行结果被当作是f()参数，整个表达式的操作类似一个一元判断式。</p>
-</blockquote></li>
-<li><p>f(g(elem1,elem2))</p>
-
-<blockquote>
-<p>这个形式中，两元素elem1和elem2作为参数传给二元判断式g(),其结果在作为参数传给一元判断式f(),整个表达式的操作类似一个二元判断式。</p>
-</blockquote></li>
-<li><p>f(g(elem),h(elem))</p>
-
-<blockquote>
-<p>此处，elem作为参数被传递给两个不同的一元判断式g()和h(),两者的结果由二元判断式f()处理，这种形式系以某种办法将单一参数注射到一个组合函数中，整个表达式的操作类似一个一元判断式。</p>
-</blockquote></li>
-<li><p>f(g(elem1),h(elem2))</p>
-
-<blockquote>
-<p>此处elem1和elem2分别作为唯一参数传给两个不同的一元判断式g()和h(),两个结果共同被二元判断式f()处理，某种程度上这种形式系在两个参数身上分布一个组合函数，整个表达式的操作类似一个二元判断式。</p>
 </blockquote></li>
 </ul>
 
+<p><strong>echo的转义序列</strong></p>
+
+<table><thead>
+<tr>
+<th align="left">序列</th>
+<th align="right">说明</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="left">\a</td>
+<td align="right">警示字符，，通常是ASCII的BEL字符</td>
+</tr>
+<tr>
+<td align="left">\b</td>
+<td align="right">退格</td>
+</tr>
+<tr>
+<td align="left">\c</td>
+<td align="right">输出中忽略最后的换行符，这个参数之后的任何字符，包括接下来的参数，都会被忽略掉</td>
+</tr>
+<tr>
+<td align="left">\f</td>
+<td align="right">清楚屏幕</td>
+</tr>
+<tr>
+<td align="left">\n</td>
+<td align="right">换行</td>
+</tr>
+<tr>
+<td align="left">\r</td>
+<td align="right">回车</td>
+</tr>
+<tr>
+<td align="left">\t</td>
+<td align="right">水平制表符</td>
+</tr>
+<tr>
+<td align="left">\v</td>
+<td align="right">垂直制表符</td>
+</tr>
+<tr>
+<td align="left">\</td>
+<td align="right">反斜杠字符</td>
+</tr>
+<tr>
+<td align="left">\0ddd</td>
+<td align="right">将字符表示成1到3位的八进制数值</td>
+</tr>
+</tbody></table>
+
 <hr>
 
-<p>后面还有一部分知识有待完善</p>
+<p><strong>printf</strong></p>
+
+<p>printf format-string [arguments...]</p>
+
+<ul>
+<li>第一部分是一个字符串，用来描述输出的排列方式，最好为此字符串加上引号。</li>
+<li>第二部分是与格式声明相对应的参数列表。（%s %d）</li>
+</ul>
 
 </body>
 </html>
