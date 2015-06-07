@@ -26,3 +26,56 @@ stack缺省采用deque。之所以选择deque而非vector,是因为deque移除�
 + top()会返回stack内的下一个元素
 + pop()会从stack中移除元素
 
+###queues
+
+        namespace std
+        {
+            template <class T,class Container =deque<T> >
+            class queue;
+        }
+        
+缺省使用deque。
+
+**queue的核心接口**
++ push()会将一个元素置入queue中
++ front()会返回queue内的下一个元素（也就是第一个被置入的元素）
++ back()会返回queue中最后一个元素
++ pop()会从queue中移除一个元素
+
+###priority queues
+priority queue内的元素已经根据其值进行了排序，可以通过一个template参数指定一个排序准则，缺省的排序准则是利用operator<形成降序排列。
+
+        namespace std
+        {
+            template<class T,class Container = vector<T>,class Compare = less<typename Container::value_type> >
+            class priority_queue;
+        }
+        
+缺省使用vector，待用默认值的第三个参数定义出用以搜寻下一个最高优先元素的排序准则，缺省情况下是以operator<作为比较标准。
+
+**priority queues的核心接口**
++ push()会将一个元素置入priority queue中
++ top()会返回priority queue中的下一个元素
++ pop()会从priority queue中移除一个元素
+
+###BITSET
+
+bitset造出一个内含位或布尔值且大小固定的array,当你需要管理各式标志，并以标志的任意组合来表现变量时，就可运用bitsets,C和C++通常使用型别long作为bit array，再通过& | -等位操作符来操作各个位。class bitset的优点在于可容纳任意个数的位，并提供各项操作。
+
+        namespace std
+        {
+            template <size_t Bits>
+            class bitset;
+        }
+        
+template 并不是一个型别，而是一个不带正负号的整数。
+
+
+
+
+
+
+
+
+
+
