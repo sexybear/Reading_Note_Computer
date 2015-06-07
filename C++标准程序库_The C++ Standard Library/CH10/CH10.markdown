@@ -1,0 +1,28 @@
+#C++标准程序库读书笔记
+##特殊容器
+特殊容器可归类如下：
++ 容器配接器
+
+    >1. stacks
+    >2. queues
+    >3. priority queues
+    
++ 一个名为bitset的特殊容器
+
+    >所谓bitset是一个位域，其中可含任意数量的bits,但一旦确定就固定不再变动，可以想象它是一个bits容器或boolean容器。C++标准程序库同时也为boolean值提供了一个长度可变的特殊容器：vector<bool>
+    
+###stacks
+
+        namespace std
+        {
+            template <class T,class Container = deque<T> >
+            class stack;
+        }
+        
+stack缺省采用deque。之所以选择deque而非vector,是因为deque移除元素时会释放内存，并且不必再重新分配时复制全部元素。
+
+**stack的核心接口**
++ push()会将一个元素置入stack内
++ top()会返回stack内的下一个元素
++ pop()会从stack中移除元素
+
