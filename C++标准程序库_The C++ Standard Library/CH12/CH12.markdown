@@ -1,0 +1,21 @@
+#C++标准程序库读书笔记
+##数值
+
+###复数
+Class complex定义于头文件complex
+
+        namespace std
+        {
+            template <class T>
+            class complex;
+        }
+        
+-------------
+        namespace std
+        {
+            template <> class complex<float>;
+            template <> class complex<double>;
+            template <> class complex<long double>;
+        }
+        
+----------------------

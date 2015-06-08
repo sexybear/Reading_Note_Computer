@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+   <meta http-equiv="content-type" content="text/html;charset=UTF-8">
+   <style type="text/css">
+   /*CSS stylesheet is based on killwing's flavored markdown style:https://gist.github.com/2937864*/body{    margin: 0 auto;    font: 13px/1.231 Helvetica, Arial, sans-serif;    color: #444444;    line-height: 1;    max-width: 960px;    padding: 5px;}h1, h2, h3, h4 {    color: #111111;    font-weight: 400;}h1, h2, h3, h4, h5, p {    margin-bottom: 16px;    padding: 0;}h1 {    font-size: 28px;}h2 {    font-size: 22px;    margin: 20px 0 6px;}h3 {    font-size: 21px;}h4 {    font-size: 18px;}h5 {    font-size: 16px;}a {    color: #0099ff;    margin: 0;    padding: 0;    vertical-align: baseline;}a:link,a:visited{ text-decoration:none;}a:hover{ text-decoration:underline;}ul, ol {    padding: 0;    margin: 0;}li {    line-height: 24px;    margin-left: 44px;}li ul, li ul {    margin-left: 24px;}ul, ol {    font-size: 14px;    line-height: 20px;    max-width: 540px;}p {    font-size: 14px;    line-height: 20px;    max-width: 540px;    margin-top: 3px;}pre {    padding: 0px 4px;    max-width: 800px;    white-space: pre-wrap;    font-family: Consolas, Monaco, Andale Mono, monospace;    line-height: 1.5;    font-size: 13px;    border: 1px solid #ddd;    background-color: #f7f7f7;    border-radius: 3px;}code {    font-family: Consolas, Monaco, Andale Mono, monospace;    line-height: 1.5;    font-size: 13px;    border: 1px solid #ddd;    background-color: #f7f7f7;    border-radius: 3px;}pre code {    border: 0px;}aside {    display: block;    float: right;    width: 390px;}blockquote {    border-left:.5em solid #40AA53;    padding: 0 2em;    margin-left:0;    max-width: 476px;}blockquote  cite {    font-size:14px;    line-height:20px;    color:#bfbfbf;}blockquote cite:before {    content: '\2014 \00A0';}blockquote p {      color: #666;    max-width: 460px;}hr {    height: 1px;    border: none;    border-top: 1px dashed #0066CC}button,input,select,textarea {  font-size: 100%;  margin: 0;  vertical-align: baseline;  *vertical-align: middle;}button, input {  line-height: normal;  *overflow: visible;}button::-moz-focus-inner, input::-moz-focus-inner {  border: 0;  padding: 0;}button,input[type="button"],input[type="reset"],input[type="submit"] {  cursor: pointer;  -webkit-appearance: button;}input[type=checkbox], input[type=radio] {  cursor: pointer;}/* override default chrome & firefox settings */input:not([type="image"]), textarea {  -webkit-box-sizing: content-box;  -moz-box-sizing: content-box;  box-sizing: content-box;}input[type="search"] {  -webkit-appearance: textfield;  -webkit-box-sizing: content-box;  -moz-box-sizing: content-box;  box-sizing: content-box;}input[type="search"]::-webkit-search-decoration {  -webkit-appearance: none;}label,input,select,textarea {  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;  font-size: 13px;  font-weight: normal;  line-height: normal;  margin-bottom: 18px;}input[type=checkbox], input[type=radio] {  cursor: pointer;  margin-bottom: 0;}input[type=text],input[type=password],textarea,select {  display: inline-block;  width: 210px;  padding: 4px;  font-size: 13px;  font-weight: normal;  line-height: 18px;  height: 18px;  color: #808080;  border: 1px solid #ccc;  -webkit-border-radius: 3px;  -moz-border-radius: 3px;  border-radius: 3px;}select, input[type=file] {  height: 27px;  line-height: 27px;}textarea {  height: auto;}/* grey out placeholders */:-moz-placeholder {  color: #bfbfbf;}::-webkit-input-placeholder {  color: #bfbfbf;}input[type=text],input[type=password],select,textarea {  -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;  -moz-transition: border linear 0.2s, box-shadow linear 0.2s;  transition: border linear 0.2s, box-shadow linear 0.2s;  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);}input[type=text]:focus, input[type=password]:focus, textarea:focus {  outline: none;  border-color: rgba(82, 168, 236, 0.8);  -webkit-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);  -moz-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(82, 168, 236, 0.6);}/* buttons */button {  display: inline-block;  padding: 4px 14px;  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;  font-size: 13px;  line-height: 18px;  -webkit-border-radius: 4px;  -moz-border-radius: 4px;  border-radius: 4px;  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);  background-color: #0064cd;  background-repeat: repeat-x;  background-image: -khtml-gradient(linear, left top, left bottom, from(#049cdb), to(#0064cd));  background-image: -moz-linear-gradient(top, #049cdb, #0064cd);  background-image: -ms-linear-gradient(top, #049cdb, #0064cd);  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #049cdb), color-stop(100%, #0064cd));  background-image: -webkit-linear-gradient(top, #049cdb, #0064cd);  background-image: -o-linear-gradient(top, #049cdb, #0064cd);  background-image: linear-gradient(top, #049cdb, #0064cd);  color: #fff;  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);  border: 1px solid #004b9a;  border-bottom-color: #003f81;  -webkit-transition: 0.1s linear all;  -moz-transition: 0.1s linear all;  transition: 0.1s linear all;  border-color: #0064cd #0064cd #003f81;  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);}button:hover {  color: #fff;  background-position: 0 -15px;  text-decoration: none;}button:active {  -webkit-box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);  -moz-box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);  box-shadow: inset 0 3px 7px rgba(0, 0, 0, 0.15), 0 1px 2px rgba(0, 0, 0, 0.05);}button::-moz-focus-inner {  padding: 0;  border: 0;}/* table  */table {    border-spacing: 0;    border: 1px solid #ccc;}td, th{    border: 1px solid #ccc;    padding: 5px;}/* code syntax highlight.Documentation: http://www.mdcharm.com/documentation/code_syntax_highlighting.html#custom_your_own */pre .literal,pre .comment,pre .template_comment,pre .diff .header,pre .javadoc {    color: #008000;}pre .keyword,pre .css .rule .keyword,pre .winutils,pre .javascript .title,pre .nginx .title,pre .subst,pre .request,pre .status {    color: #0000FF;    font-weight: bold}pre .number,pre .hexcolor,pre .python .decorator,pre .ruby .constant {    color: #0000FF;}pre .string,pre .tag .value,pre .phpdoc,pre .tex .formula {    color: #D14}pre .title,pre .id {    color: #900;    font-weight: bold}pre .javascript .title,pre .lisp .title,pre .clojure .title,pre .subst {    font-weight: normal}pre .class .title,pre .haskell .type,pre .vhdl .literal,pre .tex .command {    color: #458;    font-weight: bold}pre .tag,pre .tag .title,pre .rules .property,pre .django .tag .keyword {    color: #000080;    font-weight: normal}pre .attribute,pre .variable,pre .lisp .body {    color: #008080}pre .regexp {    color: #009926}pre .class {    color: #458;    font-weight: bold}pre .symbol,pre .ruby .symbol .string,pre .lisp .keyword,pre .tex .special,pre .prompt {    color: #990073}pre .built_in,pre .lisp .title,pre .clojure .built_in {    color: #0086b3}pre .preprocessor,pre .pi,pre .doctype,pre .shebang,pre .cdata {    color: #999;    font-weight: bold}pre .deletion {    background: #fdd}pre .addition {    background: #dfd}pre .diff .change {    background: #0086b3}pre .chunk {    color: #aaa}pre .markdown .header {    color: #800;    font-weight: bold;}pre .markdown .blockquote {    color: #888;}pre .markdown .link_label {    color: #88F;}pre .markdown .strong {    font-weight: bold;}pre .markdown .emphasis {    font-style: italic;}
+   </style>
+   
+   
+</head>
+<body>
+    <h1>shell</h1>
+
+<h2>编程基础</h2>
+
+<ul>
+<li>vi/vim 编辑器的命令  vimrc设置</li>
+<li>命令基础  100多个命令</li>
+<li>基础  高端的网络服务   nfs rsyno inotify  lanmp sersync  ssh  key批量分发管理</li>
+</ul>
+
+<h2>shell脚本简介</h2>
+
+<p>shell是一个命令解释器，负责直接与用户对话，把用户的输入解释给操作系统，并处理各种各样的操作系统的输出结果，并在屏幕展示给用户</p>
+
+<p>清空日志的三种方法(主要用于保留文件，清空内容)：</p>
+
+<ul>
+<li>echo &quot;&quot;&gt;test.log</li>
+<li>&gt;test.log</li>
+<li>cat /dev/null &gt;test.log</li>
+</ul>
+
+<p>shell脚本很擅长处理纯文本类型的数据，而linux中几乎所有的配置文件，日志文件都是纯文本类型的文件。</p>
+
+<p>脚本语言的种类：</p>
+
+<ul>
+<li>bourne shell(sh,ksh,bash)</li>
+<li>C shell(csh,tcsh)</li>
+</ul>
+
+<p>shell脚本语言是弱类型语言。</p>
+
+<p>centos 默认的shell是<strong>bash</strong>.</p>
+
+<h2>规范的shell脚本</h2>
+
+<ul>
+<li><p>脚本开头</p>
+
+<blockquote>
+<p>一个规范的shell脚本的第一行会指出哪个程序来执行脚本中的内容。如果脚本的开头不指定解释器，那么就要用对应的解释器来执行脚本。</p>
+</blockquote>
+
+<pre><code>#！/bin/bash 或者 #！/bin/sh
+#！又称为幻数，内核会根据它来确定用哪个程序来解释脚本中的内容。
+</code></pre></li>
+<li><p>注释</p></li>
+</ul>
+
+<h3>shell脚本的执行</h3>
+
+<p>当shell脚本以非交互的方式运行时，它会先查找环境变量ENV，该变量指定了一个环境文件（通常是.bashrc），然后从该环境变量文件开始执行，当读取了ENV文件后，SHELL才开始执行shell脚本中的内容。</p>
+
+<p>shell脚本的执行通常可以采用以下三种方式：</p>
+
+<ul>
+<li>bash script-name或sh script-name</li>
+<li>path/script-name或  ./script-name</li>
+<li>source script-name 或 . script-name 点号后面有空格的</li>
+</ul>
+
+<p>执行说明：</p>
+
+<p>第一种说明：当脚本文件本身没有可执行权限（即文件x位为-号）时常使用的方法，这里推荐使用bash执行，或者文件开头没有指定解释器。</p>
+
+<p>第二种方法需要先将脚本权限设置为可执行，然后通过脚本路径就可以直接执行脚本了。</p>
+
+<p>第三种方法通常是使用source或者“.”点号读入或者加载指定的shell脚本文件（san,sh），然后，依次执行指定的shell脚本文件中的所有语句。这些语句将作为当前父shell脚本father.sh进程的一部分运行，因此，使用source或者“.”点号可以将san.sh自身脚本中的变量的值或函数等的返回值传递到当前的父shell脚本father.sh中使用。这是第三种方法和前两种方法的最大区别。</p>
+
+<h3>shell脚本的九点规范</h3>
+
+<ol>
+<li>开头指定脚本解释器</li>
+<li>开头加版本版权等信息</li>
+<li>脚本中不用中文注释</li>
+<li>脚本以.sh为扩展名</li>
+<li><p>代码书写优秀习惯</p>
+
+<blockquote>
+<ol>
+<li>成对的内容一次写出来，反之遗漏</li>
+<li>[]中括号两端要有空格，书写时即可留出空格[  ],然后再退格书写内容。</li>
+<li>流程控制语句一次书写完，再添加内容</li>
+<li>通过缩进使代码易读。</li>
+</ol>
+</blockquote></li>
+</ol>
+
+<h3>shell变量</h3>
+
+<p>分为两类  环境变量（全局变量）和局部变量</p>
+
+<p>环境变量称为全局变量，可以在创建他们的shell及其派生出来的任意子进程shell中使用，局部变量只能在创建他们的shell函数或脚本中使用，还有一些变量是用户创建的，其他的则是专用shell变量。</p>
+
+<h4>环境变量</h4>
+
+<p>环境变狼可以在命令行中设置，但用户推出时这些变量值也会丢失，因此最好在用户家目录下的.bash_profile文件中或全局配置/etc/bashrc,/etc/profile文件或者/etc/profile.d/中定义。将环境变量放入profile中，每次用户登陆时这些变量值都会初始化。</p>
+
+<p>环境变量最好全为大写，应用于用户进程前，必须用export命令导出。</p>
+
+<p><strong>全局变量赋值方法</strong></p>
+
+<ol>
+<li>export变量名=value</li>
+<li>变量名=value  export 变量名</li>
+<li>declare -x 变量名=value</li>
+</ol>
+
+<p>用env或set显示默认的环境变量。</p>
+
+<p>用unset来取笑环境变量。</p>
+
+<h4>局部变量</h4>
+
+<p>本地变量，在用户当前的shell生存期的脚本中使用。如果在shell中启动另一个进程或退出，本地变量的值也会取消。</p>
+
+<p>shell变量名的要求：一般是字母，数字，下划线组成，字母开头。</p>
+
+<p>定义变量的三种方法：</p>
+
+<ol>
+<li>直接定义变量内容，内容一般为简单连续的数字，字符串，路径名等。</li>
+<li>通过单引号定义变量，这种方法的特点是：输出变量时引号里是什么就输出什么，即使内容中有变量也会把变量名原样输出，此法比较适合于定义显示纯字符串。</li>
+<li>通过双引号定义变量，这种方式的特点是:输出变量时引号里的变量会经过解析输出该变量内容，而不是把引号中变量名原样输出，适合于字符串中附带有变量的内容的定义。</li>
+</ol>
+
+<p><strong>习惯：</strong>数字不加引号，字符加双引号。</p>
+
+</body>
+</html>
