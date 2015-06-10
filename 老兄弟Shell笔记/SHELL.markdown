@@ -129,6 +129,18 @@ shift
 
 按如下方式重新命名所有的位置参数变量，$2变$1  后面的参数向前变。
 
+###shell变量子串
++ ${#string} 返回字符串的长度
++ ${string:position} 在$string中，从位置$position之后开始提取子串
++ ${string:position:length} 提取长度为length的子串
++ ${string#substring}  从开头开始删  最短匹配
++ ${string##substring}  从开头开始删  最长匹配
++ ${string%substring}  从结尾开始删  最短匹配
++ ${string%%substring}  从开头开始删  最长匹配
+
+
+
+
 
 
 
